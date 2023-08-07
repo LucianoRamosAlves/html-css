@@ -1,0 +1,47 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+
+
+body{
+
+    background-image: linear-gradient(to right,#CBF3F0 ,#2EC4B6);
+
+padding: 2em
+
+
+
+
+}
+
+h1{ color: #EF9CDA; font-size: 3em;
+    font-weight: 100;
+text-align: center; 
+text-decoration: underline;
+font-family:'Black Ops One'
+
+
+
+}
+
+
+
+h2{ color: #89A1EF;}
+
+
+
+
+h3{ color: #FECEF1;}
+
+
+
+main{ background-color: azure;}
+
+p{ 
+    text-align: justify;
+}
+
+ul{ color:#db3b13 ;
+
+
+}
