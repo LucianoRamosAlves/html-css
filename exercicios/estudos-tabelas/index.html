@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio tabela</title>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    thead{
+        background-color: rgb(151, 151, 153);
+        color: antiquewhite;
+    }
+    .estilo{
+        background-color: rgb(151, 151, 153);
+        color: antiquewhite;
+    }
+    td,th{
+        text-transform: capitalize;
+        padding: 15px;
+    }
+    caption{
+        text-transform: uppercase;
+        text-align: left;
+        padding:20px;
+        font-size: 25px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    tfoot  td{
+        text-align: center;
+        padding: 1px;
+        background-color: rgba(0, 0, 0, 0.536);
+        color: aliceblue;
+    }
+    </style>
+</head>
+<!-- algumas observações
+   em <boder-collapse > se tiver <separate> que é o normal,padrão
+    pode acionar a tag< border-spacing ( px,X...pxY) distancia do espaço do eixo x e y
+
+    - <empaty-cells>; hiden/show-- mostra celulas vazias
+
+    --<tr:ntd-child(even)>{ backgrand-color ou color etc..} efeito zebrado
+
+    -tem ainda o <display table cell>,, ativa o vertical-align 
+
+    -<table layout: fixed>,, mesmo tamanho dos quadros
+
+        -- configurações para cabecalho da tabela fixo--
+
+        table{ position relative}
+        thead,tr,th{ position sticky
+                     top: -1
+                     backgrand-color
+        }
+
+        todo <th> tem que ter scope
+            tem que analizar
+            se na coluna 1 os dados dessa coluna estão na vertical 
+            então o <scope é col> ex; nessa tabela tem a área, veja que seus dados estão na vertical, coluna, uma coluna que são exatas/humanas
+
+                se nessa coluna tiver varios dados em cojuntos veja em
+                notas uma coluna , seus dados estão em 2 coluna , nota 1 e 2
+                mas veja que é um conjunto, não é só uma coluna 
+                então é um <colgrup>
+
+            se no <th> os dados estão na horizontal,na linha, então é 
+            <row>
+                ex; veja em exatas, um th , e os seus dados etão em linha,então é row, como são varias linhas para um th 
+                fica <rowgroup>
+
+                ex; média de exatas/humans é um th e seus dados estão na linha, na horizontal, não é varias linhas para essa th como é 
+                em exatas, aqui é só uma linha para media exatas/humans
+                então aqui é só scope <row>
+-->
+<body>
+    <table>
+        <caption> <strong>estudos tabelas</strong></caption>
+        <thead><!-- cabecalho da tabela-->
+            <tr>
+                <th rowspan="2" scope="col"> Área</th> <!-- th é a coluna-->
+                <th rowspan="2" scope="col"> Disciplinas</th>
+                <th colspan="2" scope="colgroup"> notas</th>
+                <th rowspan="2" scope="col"> média</th>
+            </tr>
+            <tr>
+                <th scope="col">notas 1</th>
+                <th scope="col">notas 2</th>
+            </tr>
+        </thead>
+        <tbody><!-- tbody é o corpo da tabela-->
+            <th rowspan="5" scope="rowgroup"> exatas</th>
+            <tr>
+                <td> matemática</td> <!-- td é a linha-->
+                <td>0.0</td>
+                <td> 0.0</td>
+                <td>0.0</td>
+            </tr>
+            <tr>
+                <td>física</td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td>0.0</td>
+            </tr>
+            <tr>
+                <td>química</td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td>0.0</td>
+            </tr>
+            <tr>
+                <td>biologia</td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td>0.0</td>
+            </tr>
+            <tr class="estilo">
+                <th colspan="4" scope="row"> média de exatas</th>
+                    <td> 0.0</td>
+            </tr>
+
+                <tr>
+                    <th rowspan="3" scope="rowgroup">humanas</th>
+                </tr>
+                <tr>
+                    <td>historia</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>geografia</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr class="estilo">
+                    <th colspan="4" scope="row">média humanas</th>
+                    <td>0.0</td>
+                </tr>
+            
+        </tbody>
+        <tfoot>
+            <td colspan="5"> <i>LUCIANO RAMOS ALVES</i></td>
+        </tfoot>
+    </table>
+    
+</body>
+</html>
