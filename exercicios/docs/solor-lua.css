@@ -1,0 +1,26 @@
+:root{
+    --color6:#F2F2F2 ;
+    --color7:#BFBFBF ;
+    --color8:#8C8C8C ;
+    --color9:#595959;
+    --color10:#0D0D0D ;
+}
+.lua{
+    background-color:#595959;
+}
+ .lua h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #BFBFBF;
+}
+.lua-caixa{
+    background-image: url(lua/nasa-pd4lo70LdbI-unsplash.jpg);
+    background-size: 100%;
+    width: 100%;
+    height: 60%;
+    background-position: center;
+}
+.lua p, li{
+    padding: 50px;
+}
