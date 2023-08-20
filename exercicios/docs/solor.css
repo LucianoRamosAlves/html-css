@@ -38,7 +38,7 @@ header h1{
     text-shadow: 1px 1px 20px var(--color5);
     filter: opacity(100%);
 }
-span{
+header span{
     font-size: 60px;
     color:#4A89CC;
     filter: opacity(90%);
@@ -84,6 +84,8 @@ a:hover{
     width: 50%;
     letter-spacing: 2px;
     transition: all 0.8s ease;
+    position: sticky;
+    top: 0;
 }
 i{
     margin: 40px;
@@ -100,6 +102,7 @@ i{
     height: 700px;
     background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 .lua p, li{
     padding: 50px;
