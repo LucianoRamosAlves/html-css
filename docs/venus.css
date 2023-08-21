@@ -1,0 +1,48 @@
+:root{
+    --color1:#F2BC57;
+    --color2:#D98E32;
+    --color3:#A65A17;
+    --color4:#73280D;
+    --color5:#0D0D0D;
+    --color6:#4E2505;
+}
+
+.venus h1{
+    font-size: 40px;
+    text-transform: uppercase;
+    color: aliceblue;
+    background-color:#d98e32e6;
+    text-shadow: 2px 2px 20px wheat;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    width: 50%;
+    letter-spacing: 2px;
+    transition: all 0.8s ease;
+    position: sticky;
+    top: 0;
+}
+i{
+    margin: 40px;
+}
+.venus h1:hover{
+    letter-spacing: 18px;
+    background-color: #8c8c8c00;
+    text-shadow: 1px 1px 20px var(--color5);
+}
+.venus{
+    box-sizing: border-box;
+    background-image: url(venus/Venus_globe.jpg);
+    background-size: 100%;
+    width: 100%;
+    height: 1000px;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.venus p, li{
+    padding: 50px;
+}
+.venus span{
+    margin-top: 5px;
+    margin-left: 40px;
+}
