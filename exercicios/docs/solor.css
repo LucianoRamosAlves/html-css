@@ -1,6 +1,10 @@
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
 }
 /* falta 02 b.o{
     1.. o menu sai da imagem em tamanhos menores
@@ -104,10 +108,31 @@ i{
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
-.lua p, li{
-    padding: 50px;
+.lua h2{
+    font-size: 3em;
+    text-align:left;
+    color: #595959;
+    margin-left: 5%;
+    text-align: center;
 }
-
+.lua ul{
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+    background-color: blanchedalmond;
+    overflow: scroll;
+    width: 40%;
+    position: relative;
+    left: 58%;
+    top: 30%;
+}
+.lua li{
+    font-size: 1.3em;
+    line-height: 2em;
+    list-style: none;
+    padding: 0px;
+    margin-left: 5px;
+}
 
 
  

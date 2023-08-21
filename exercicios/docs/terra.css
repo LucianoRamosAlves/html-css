@@ -46,3 +46,28 @@ i{
 .terra span{
     margin-top: 5px;
 }
+.terra h2{
+    font-size: 3em;
+    text-align:left;
+    color: #595959;
+    margin-left: 5%;
+    text-align: center;
+}
+.terra ul{
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+    background-color: blanchedalmond;
+    overflow: scroll;
+    width: 40%;
+    position: relative;
+    left: 58%;
+    top: 30%;
+}
+.terra li{
+    font-size: 1.3em;
+    line-height: 2em;
+    list-style: none;
+    padding: 0px;
+    margin-left: 5px;
+}

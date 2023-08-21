@@ -2,6 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
+html{
+    scroll-behavior: smooth;
+}
 /* falta 02 b.o{
     1.. o menu sai da imagem em tamanhos menores
     2.. o menu em tela maiores aparece no fim da
