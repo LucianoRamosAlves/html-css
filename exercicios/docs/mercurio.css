@@ -20,6 +20,7 @@
     transition: all 0.8s ease;
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 i{
     margin: 40px;
@@ -31,10 +32,10 @@ i{
 }
 .mercurio{
     background-image: url(mercurio/Mercurio-mercury-5537392_1920.jpg);
-    background-size:cover;
+    background-size: cover;
     width: 100%;
     height: 1000px;
-    background-position: center center;
+    background-position: center;
     background-attachment:fixed;
     background-repeat: no-repeat;
 }
@@ -45,3 +46,42 @@ i{
     margin-top: 5px;
     margin-left: 40px;
 }
+.mercurio h2{
+    font-size: 2.8em;
+    text-align:left;
+    color: #595959;
+    margin-left: 5%;
+    text-align: center;
+}
+.mercurio ul{
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+    background-color:#f2d5bbab;
+    overflow:auto;
+    width: 40%;
+    position: relative;
+    left: 58%;
+    top: 30%;
+}
+.mercurio li{
+    font-size: 1.3em;
+    line-height: 2em;
+    list-style: none;
+    padding: 0;
+    margin-left: 5px;
+}
+@media screen and (orientation: portrait){
+    }
+    .mercurio h1{
+        width: 100%;
+        text-align: center;
+    }
+    .mercurio ul{
+        top: 5%;
+    }
+    .mercurio h2{
+        font-size: 1.7em;
+        text-align: left;
+    }
+    

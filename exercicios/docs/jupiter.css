@@ -20,6 +20,7 @@
     transition: all 0.8s ease;
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 i{
     margin: 40px;
@@ -32,7 +33,7 @@ i{
 .jupiter{
     box-sizing: border-box;
     background-image: url(jupiter/planet-volumes-awYEQyYdHVE-unsplash.jpg);
-    background-size: 100%;
+    background-size:cover;
     width: 100%;
     height: 1000px;
     background-position: center;
@@ -46,3 +47,42 @@ i{
     margin-top: 5px;
     margin-left: 40px;
 }
+.jupiter h2{
+    font-size: 3em;
+    text-align:left;
+    color: var(--color3);
+    margin-left: 5%;
+    text-align: center;
+}
+.jupiter ul{
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+    background-color:#C9C9C7;
+    overflow: auto;
+    width: 40%;
+    position: relative;
+    left: 58%;
+    top: 30%;
+}
+.jupiter li{
+    font-size: 1.3em;
+    line-height: 2em;
+    list-style: none;
+    padding: 0px;
+    margin-left: 5px;
+}
+@media screen and (orientation: portrait){
+    
+    .jupter h1{
+        width: 100%;
+        text-align: center;
+    }
+    .jupiter ul{
+        top: 25%;
+    }
+    .jupiter h2{
+        font-size: 2.1em;
+    }
+    
+    }
