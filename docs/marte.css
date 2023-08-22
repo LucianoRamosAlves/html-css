@@ -20,6 +20,7 @@
     transition: all 0.8s ease;
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 i{
     margin: 40px;
@@ -32,7 +33,7 @@ i{
 .marte{
     box-sizing: border-box;
     background-image: url(marte/Marte-NASA.png);
-    background-size: 100%;
+    background-size:cover;
     width: 100%;
     height: 1000px;
     background-position: center;
@@ -46,3 +47,42 @@ i{
     margin-top: 5px;
     margin-left: 40px;
 }
+.marte h2{
+    font-size: 3em;
+    text-align:left;
+    color:var(--color6);
+    margin-left: 5%;
+    text-align: center;
+}
+.marte ul{
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+    background-color:#F2A172;
+    overflow:auto;
+    width: 40%;
+    position: relative;
+    left: 58%;
+    top: 30%;
+}
+.marte li{
+    font-size: 1.3em;
+    line-height: 2em;
+    list-style: none;
+    padding: 0;
+    margin-left: 5px;
+}
+@media screen and (orientation: portrait){
+    
+    .marte h1{
+        width: 100%;
+        text-align: center;
+    }
+    .marte ul{
+        top: 25%;
+    }
+    .marte h2{
+        font-size: 2.5em;
+    }
+        
+    }

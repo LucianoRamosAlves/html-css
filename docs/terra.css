@@ -20,6 +20,7 @@
     transition: all 0.8s ease;
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 i{
     margin: 40px;
@@ -33,7 +34,7 @@ i{
 .terra{
     box-sizing: border-box;
     background-image: url(terra/anirudh-Xu4Pz7GI9JY-unsplash.jpg);
-    background-size: 100%;
+    background-size:cover;
     width: 100%;
     height: 1000px;
     background-position: center;
@@ -46,3 +47,40 @@ i{
 .terra span{
     margin-top: 5px;
 }
+.terra h2{
+    font-size: 3em;
+    text-align:left;
+    color: var(--color4);
+    margin-left: 5%;
+    text-align: center;
+}
+.terra ul{
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+    background-color:#5ce3f289;
+    overflow: auto;
+    width: 40%;
+    position: relative;
+    left: 58%;
+    top: 30%;
+}
+.terra li{
+    font-size: 1.3em;
+    line-height: 2em;
+    list-style: none;
+    padding: 0px;
+    margin-left: 5px;
+}
+@media screen and (orientation: portrait){
+    
+    .terra h1{
+        width: 100%;
+        text-align: center;
+    }
+    .terra ul{
+        top: 25%;
+    }
+        
+    }
+    
