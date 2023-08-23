@@ -31,7 +31,7 @@ i{
     text-shadow: 1px 1px 20px var(--color5);
 }
 .mercurio{
-    background-image: url(/mercurio/imagem/Mercurio-mercury-5537392_1920.jpg);
+    background-image: url(mercurio/imagem/Mercurio-mercury-5537392_1920.jpg);
     background-size: cover;
     width: 100%;
     height: 1000px;
