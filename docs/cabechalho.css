@@ -49,7 +49,7 @@ header span{
     filter: opacity(90%);
 }
 nav{
-    display: flex;
+    display: none;
     justify-content: space-around;
     background-color:#010101;
     overflow-x: hidden;
@@ -57,7 +57,7 @@ nav{
 nav a {
     text-align: center;
     text-decoration: none;
-    font-size: 75%;
+    font-size: 80%;
     font-family: 'Rubik Mono One', sans-serif;
     padding: 20px;
     color:#4A89CC;
@@ -73,3 +73,19 @@ nav a:hover{
 strong{
     display: block;
 }
+#menu{
+    background-color: #033E8C;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color: aliceblue;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+#menu:hover{
+    background-color: aliceblue;
+    color: #033E8C;
+}
+
+
+    
