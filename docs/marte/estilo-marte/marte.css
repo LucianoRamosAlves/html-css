@@ -1,15 +1,17 @@
 :root{
-    --color6:#F2F2F2 ;
-    --color7:#BFBFBF ;
-    --color8:#8C8C8C ;
-    --color9:#595959;
-    --color10:#0D0D0D ;
+    --color35:#F2A199;
+    --color36:#F2A172;
+    --color37:#F26A4B;
+    --color38:#A64B37;
+    --color39:#0D0D0D;
+    --color40:#5C3426;
 }
- .lua h1{
+
+.marte h1{
     font-size: 40px;
     text-transform: uppercase;
     color: aliceblue;
-    background-color: #8c8c8c8e;
+    background-color:#f26a4bd1;
     text-shadow: 2px 2px 20px wheat;
     border-bottom-right-radius: 50px;
     border-top-right-radius: 50px;
@@ -23,50 +25,56 @@
 i{
     margin: 40px;
 }
-li{
-    margin-top: 20px;
-}
-.lua h1:hover{
+.marte h1:hover{
     letter-spacing: 18px;
     background-color: #8c8c8c00;
-    text-shadow: 1px 1px 20px var(--color5);
+    text-shadow: 1px 1px 20px var(--color39);
 }
-.lua{
-    background-image: url(/lua/imagem/nasa-pd4lo70LdbI-unsplash.jpg);
+.marte{
+    box-sizing: border-box;
+    background-image: url(/marte/imagem/Marte-NASA.png);
     background-size:cover;
     width: 100%;
-    height: 700px;
+    height: 1000px;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
-.lua h2{
+.marte p, li{
+    padding: 50px;
+}
+.marte span{
+    margin-top: 5px;
+    margin-left: 40px;
+}
+.marte h2{
     font-size: 3em;
     text-align:left;
     color:var(--color5);
     margin-left: 5%;
     text-align: center;
 }
-.lua ul{
-    display:flex;
+.marte ul{
+    display: flex;
     flex-direction: column;
     height: 25%;
-    background-color:#bfbfbf61;
-    overflow: auto;
+    background-color:var(--color36);
+    overflow:auto;
     width: 40%;
     position: relative;
     left: 58%;
     top: 30%;
 }
-.lua li{
+.marte li{
     font-size: 1.3em;
     line-height: 2em;
     list-style: none;
-    padding: 0px;
+    padding: 0;
     margin-left: 5px;
 }
-.lua button{
-    background-color:#59595942 ;
+.marte button{
+    padding: 5px 10px;
+    background-color:#a64b373b ;
     border-radius: 5px;
     cursor: pointer;
     position: relative;
@@ -78,7 +86,7 @@ li{
     z-index: 1;
     display: flex;
 }
-.lua a{
+.marte a{
     text-decoration: none;
     font-size: 1.5em;
     text-transform: uppercase;
@@ -86,16 +94,11 @@ li{
     color: aliceblue;
     transition: all 0.8s ease;
     width: 100%;
-    padding: 5px 10px;
 }
-.lua button:hover{
-    padding: 6.5px;
-    background-color: #595959;
+.marte button:hover{
+    padding:6px;
+    background-color: var(--color38);
 }
-.lua a:hover{
+.marte a:hover{
     text-shadow: 2px 2px 20px wheat;
 }
-
-
-
- 
