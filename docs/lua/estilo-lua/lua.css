@@ -32,7 +32,7 @@ li{
     text-shadow: 1px 1px 20px var(--color5);
 }
 .lua{
-    background-image: url(/lua/imagem/nasa-pd4lo70LdbI-unsplash.jpg);
+    background-image: url(nasa-pd4lo70LdbI-unsplash.jpg);
     background-size:cover;
     width: 100%;
     height: 700px;
