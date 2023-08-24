@@ -25,8 +25,9 @@ header{
     background-size: 100%;
     background-repeat: no-repeat;
 }
+/*aliceblue*/
 header h1{
-    color: aliceblue;
+    color:black;
     font-family: 'Rubik Mono One', sans-serif;
     text-transform: uppercase;
     text-align:center;
