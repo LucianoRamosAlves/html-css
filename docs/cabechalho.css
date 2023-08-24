@@ -26,7 +26,11 @@ header{
     background-repeat: no-repeat;
 }
 header h1{
+<<<<<<< Updated upstream
     color: aliceblue;
+=======
+    color:black;
+>>>>>>> Stashed changes
     font-family: 'Rubik Mono One', sans-serif;
     text-transform: uppercase;
     text-align:center;
