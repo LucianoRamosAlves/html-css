@@ -1,9 +1,9 @@
-@media screen and (min-width:0px) and (max-width:450px){
+@media screen and (min-width:0px) and (max-width:700px){
     nav{
         flex-direction: column;
     }
     .lua{
-        height:100%;
+        height:900px;
     }
     .lua h1{
         width: 100%;
@@ -12,7 +12,8 @@
     .lua ul{
         width: 100%;
         position: static;
-        margin-top: 98%;
+        margin-top: 630px;
+        height: 120px;
     }
     .lua li{
         text-align: center;
@@ -25,7 +26,7 @@
     }
     /* MERCURIO*/
     .mercurio{
-        height:100%;
+        height:900px;
     }
 
     .mercurio h1{
@@ -36,7 +37,8 @@
         width: 100%;
         position: static;
         margin:auto;
-        margin-top: 98%;
+        margin-top:630px;
+        height: 120px;
     }
     .mercurio li{
         text-align: center;
@@ -50,7 +52,7 @@
 
     /*venus*/
     .venus{
-        height:100%;
+        height:900px;
     }
     .venus h1{
         width: 100%;
@@ -59,7 +61,8 @@
     .venus ul{
         width: 100%;
         position: static;
-        margin-top: 98%;
+        margin-top:630px;
+        height: 120px;
     }
     .venus li{
         text-align: center;
@@ -73,7 +76,7 @@
     
     /* terra*/
     .terra{
-        height: 100%;
+        height: 900px;
     }
 
     .terra h1{
@@ -83,7 +86,8 @@
     .terra ul{
         width: 100%;
         position: static;
-        margin-top: 98%;
+        margin-top:630px;
+        height: 120px;
     }
     .terra li{
         text-align: center;
@@ -96,7 +100,7 @@
     }
     /*marte*/
     .marte{
-        height: 100%;
+        height: 900px;
     }
 
     .marte h1{
@@ -106,7 +110,8 @@
     .marte ul{
         width: 100%;
         position: static;
-        margin-top: 98%;
+        margin-top: 630px;
+        height: 120px;
     }
     .marte li{
         text-align: center;
@@ -120,7 +125,7 @@
 
     /* jupiter*/
     .jupiter{
-        height: 100%;
+        height:900px;
     }
 
     .jupiter h1{
@@ -130,7 +135,8 @@
     .jupiter ul{
         width: 100%;
         position: static;
-        margin-top: 98%;
+        margin-top:630px;
+        height: 120px;
     }
     .jupiter li{
         text-align: center;
