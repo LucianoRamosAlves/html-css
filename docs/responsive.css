@@ -1,7 +1,10 @@
-@media screen and (max-width:450px){
+@media screen and (min-width:0px) and (max-width:450px){
     nav{
         flex-direction: column;
-    } 
+    }
+    .lua{
+        height:100%;
+    }
     .lua h1{
         width: 100%;
         text-align: center;
@@ -21,6 +24,9 @@
         margin-top: 20px;
     }
     /* MERCURIO*/
+    .mercurio{
+        height:100%;
+    }
 
     .mercurio h1{
         width: 100%;
@@ -43,6 +49,9 @@
     }
 
     /*venus*/
+    .venus{
+        height:100%;
+    }
     .venus h1{
         width: 100%;
         text-align: center;
@@ -63,6 +72,9 @@
     }
     
     /* terra*/
+    .terra{
+        height: 100%;
+    }
 
     .terra h1{
         width: 100%;
@@ -83,6 +95,9 @@
         margin-top: 40px;
     }
     /*marte*/
+    .marte{
+        height: 100%;
+    }
 
     .marte h1{
         width: 100%;
@@ -104,6 +119,9 @@
     }
 
     /* jupiter*/
+    .jupiter{
+        height: 100%;
+    }
 
     .jupiter h1{
         width: 100%;
