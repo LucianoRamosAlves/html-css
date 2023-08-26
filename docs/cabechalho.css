@@ -57,7 +57,7 @@ nav{
 nav a {
     text-align: center;
     text-decoration: none;
-    font-size: 80%;
+    font-size: 1em;
     font-family: 'Rubik Mono One', sans-serif;
     padding: 20px;
     color:#4A89CC;
@@ -66,9 +66,9 @@ nav a {
 }
 nav a:hover{
     background-color:#0D0D0D;
-    text-shadow: 1px 1px 1px wheat;
     padding-top: 30px;
     border-radius: 10px;
+    font-size: 1.1em;
 }
 strong{
     display: block;
@@ -96,6 +96,39 @@ footer{
 i{
     color: antiquewhite;
 }
+a:nth-child(1){
+    border-bottom:1px solid #2d2018;
+}
+a:nth-child(2){
+    border-bottom:1px solid #d98e32;
+}
+
+a:nth-child(3){
+    border-bottom:1px solid #1f72a6;
+}
+a:nth-child(4){
+    border-bottom:1px solid #f26a4b;
+}
+a:nth-child(5){
+    border-bottom:1px solid #f2cea2;
+}
+a:nth-child(1):hover{
+    background-color: #2d201863;
+    color: aliceblue;
+}a:nth-child(2):hover{
+    background-color: #d98e3267;
+    color: aliceblue;
+}a:nth-child(3):hover{
+    background-color: #1f72a66d;
+    color: aliceblue;
+}a:nth-child(4):hover{
+    background-color: #f26a4b6a ;
+    color: aliceblue;
+}a:nth-child(5):hover{
+    background-color: #f2cea26b;
+    color: aliceblue;
+}
+
 
 
     
