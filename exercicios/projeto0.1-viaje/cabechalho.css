@@ -1,0 +1,134 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* falta 02 b.o{
+    1.. o menu sai da imagem em tamanhos menores
+    2.. o menu em tela maiores aparece no fim da
+        janela
+    */
+:root{
+    --color1: #040FD9;
+    --color2: #033E8C;
+    --color3: #023059;
+    --color4: #012840;
+    --color5: #0D0D0D;
+}
+header{
+    padding: 10%;
+    background-image: url(phil-botha-a0TJ3hy-UD8-unsplash.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+header h1{
+    color:aliceblue;
+    font-family: 'Rubik Mono One', sans-serif;
+    text-transform: uppercase;
+    text-align:center;
+    text-shadow: 2px 2px 20px wheat;
+    filter: opacity(90%);
+    font-size: 30px;
+    letter-spacing: 10px;
+    line-height: 50px;
+    transition: all 1.5s ease;
+}
+ header :hover{
+    letter-spacing: 20px;
+    line-height: 55px;
+    text-shadow: 1px 1px 20px var(--color5);
+    filter: opacity(100%);
+}
+header span{
+    font-size: 60px;
+    color:#4A89CC;
+    filter: opacity(90%);
+}
+nav{
+    display:none;
+    justify-content: space-around;
+    background-color:#010101;
+    overflow-x: hidden;
+}
+nav a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: 'Rubik Mono One', sans-serif;
+    padding: 20px;
+    color:#4A89CC;
+    width: 100%;
+    transition: all 0.8s ease;
+}
+nav a:hover{
+    background-color:#0D0D0D;
+    padding-top: 30px;
+    border-radius: 10px;
+    font-size: 1.1em;
+}
+strong{
+    display: block;
+}
+#menu{
+    background-color: #033E8C;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color: aliceblue;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+#menu:hover{
+    background-color: aliceblue;
+    color: #033E8C;
+}
+/* footer*/
+footer{
+    padding: 2%;
+    background-color: #0D0D0D;
+    text-align: center;
+    font-size: 1em;
+}
+i{
+    color: antiquewhite;
+}
+a:nth-child(1){
+    border-bottom:1px solid #2d2018;
+}
+a:nth-child(2){
+    border-bottom:1px solid #d98e32;
+}
+
+a:nth-child(3){
+    border-bottom:1px solid #1f72a6;
+}
+a:nth-child(4){
+    border-bottom:1px solid #f26a4b;
+}
+a:nth-child(5){
+    border-bottom:1px solid #f2cea2;
+}
+a:nth-child(1):hover{
+    background-color: #2d201863;
+    color: aliceblue;
+}a:nth-child(2):hover{
+    background-color: #d98e3267;
+    color: aliceblue;
+}a:nth-child(3):hover{
+    background-color: #1f72a66d;
+    color: aliceblue;
+}a:nth-child(4):hover{
+    background-color: #f26a4b6a ;
+    color: aliceblue;
+}a:nth-child(5):hover{
+    background-color: #f2cea26b;
+    color: aliceblue;
+}
+
+
+
+    

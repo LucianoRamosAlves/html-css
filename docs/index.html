@@ -1,111 +1,79 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIAJE.COM</title>
-    <link rel="stylesheet" href="cabechalho.css">
-    <link rel="stylesheet" href="lua.css" media="all">
-    <link rel="stylesheet" href="venus.css" media="all">
-    <link rel="stylesheet" href="mercurio.css" media="all">
-    <link rel="stylesheet" href="terra.css" media="all">
-    <link rel="stylesheet" href="marte.css" media="all">
-    <link rel="stylesheet" href="jupiter.css" media="all">
-    <link rel="stylesheet" href="responsive.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="grid.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1> <span>v</span>iaje pelo espaço</h1>
-    </header>
-    <span id="menu" class="material-symbols-outlined" onclick="clickMenu()">
-        clear_all 
-        </span>
-        <nav id="itens">
-                <a href="#mercurio">Mercurio</a>
-                <a href="#venus">venus</a>
-                <a href="#terra">Terra</a>
-                <a href="#marte">marte</a>
-                <a href="#jupiter">jupiter</a>
+    <div class="estrutura">
+        <header class="cabeca">
+            <h1> LRA</h1>
+            <nav>
+                <ul>
+                    <li><a href="">MAIS</a></li>
+                    <li><a href="">CONTATOS</a></li>
+                    <li><a href="">SOBRE</a></li>
+                </ul>
+            </nav>
+        </header>
+        <nav class="naveg">
+                <ul>
+                    <li><a href=""><img class="imgpeixe" src="imagens/peixes/Iconarchive-Cute-Animal-Cute-Fish.512.png" alt="menu 1 com imagem de um peixe em desenho azul"></a></li>
+                    <li><a href=""><img src="imagens/Iconarchive-Cute-Animal-Cute-Fox.512.png" alt=" menu 2 com imagem de uma raposa amarela em pé"></a></li>
+                    <li><a href=""><img src="imagens/Iconarchive-Cute-Animal-Cute-Ladybug.512.png" alt="menu 3 com uma imagem de uma joaninha vermelha com potinhos pretos"></a></li>
+                    <li><a href=""><img src="imagens/Iconarchive-Cute-Animal-Cute-Penguin.512.png" alt="menu 4 com imagem de um pinguin"></a></li>
+                    <li><a href=""><img src="imagens/Iconarchive-Cute-Animal-Cute-Snail.512.png" alt="menu 5 com uma imagem de um caracol com o casco amarelo"></a></li>
+                    <li><a href=""><img src="imagens/Iconarchive-Cute-Animal-Cute-Turtle.512.png" alt="menu 6 com imagem de uma tartaruga verde"></a></li>
+                </ul>
         </nav>
-    <main>
-        <article>
-            <section class="lua">
-                <h1 id="lua"> Lua</h1>
-                    <!--<iframe src="luamais/index.html" frameborder="0">
-                    </iframe><!-->
-                    <ul>
-                        <h2>LUA</h2>
-                        <li><strong>Distância da Terra:</strong> 384.400 km</li>
-                        <li><strong>Período orbital:</strong> 27 dias</li>
-                    </ul>
-                    <button class="butao"> <a href="lua/mais/index.html" target="_blank">saiba mais</a></button>
-            </section>
-            <section class="mercurio">
-                <h1 id="mercurio"> <span>Mercurio</span></h1>
-                <ul>
-                    <h2>MERCURIO</h2>
-                    <li><strong>Distância da Terra:</strong>58.000.000 km</li>
-                    <li><strong>Período orbital:</strong>59d 0h 0m</li>
-                </ul>
-                <button class="butao"> <a href="mercurio/mais/index.html" target="_blank">saiba mais</a></button>
-            </section>
-            <section class="venus">
-                <h1 id="venus"> <span>venus</span></h1>
-                <ul>
-                    <h2>VENUS</h2>
-                    <li><strong>Distância da Terra:</strong> 108.200.000 km</li>
-                    <li><strong>Período orbital:</strong>  243d 0h 0m</li>
-                </ul>
-                <button class="butao"> <a href="lua/mais/index.html" target="_blank">saiba mais</a></button>
-            </section>
-            <section class="terra">
-                <h1 id="terra"> <span>terra</span></h1>
-                <ul>
-                    <h2>TERRA</h2>
-                    <li><strong>Distância da Terra:</strong> 149 600 000 km</li>
-                    <li><strong>Período orbital:</strong>  243d 0h 0m</li>
-                </ul>
-                <button class="butao"> <a href="terra/mais/index.html" target="_blank">saiba mais</a></button>
-            </section>
-            <section class="marte">
-                <h1 id="marte"> <span>Marte</span></h1>
-                <ul>
-                    <h2>MARTE</h2>
-                    <li><strong>Distância da Terra:</strong> 227.900.000 km</li>
-                    <li><strong>Período orbital:</strong>  1d 0h 37m</li>
-                </ul>
-                <button class="butao"> <a href="marte/mais/index.html" target="_blank">saiba mais</a></button>
-            </section>
-            <section class="jupiter">
-                <h1 id="jupiter"> <span>jupiter</span></h1>
-                <ul>
-                    <h2>JUPITER</h2>
-                    <li><strong>Distância da Terra:</strong> 778.500.000 km</li>
-                    <li><strong>Período orbital:</strong>  0d 9h 56m</li>
-                </ul> 
-                <button><a href="jupiter/mais/index.html" target="_blank">saiba mais</a></button>
-            </section>
+        <main class="principal">
+                <h2 class="titulo">PEIXES</h2>
+                    <div class="caixa">
+                        <div>
+                            <span class="geral"> Reino</span> 
+                            <span class="especifico">Animalia</span>
+                        </div>
+                        <div>
+                            <span class="geral">Filo</span>
+                            <span class="especifico">Chordata</span>
+                        </div>
+                    </div>
+                    <img class="img1" src="imagens/peixes/david-clode-9FvTOCfvt_w-unsplash.jpg" alt="">
 
-        </article>
-    </main> 
-    <footer>
-        <abbr title="projeto 01"> <I>LUCIANO RAMOS</I></abbr>
-    </footer>
-    <script>
-        function clickMenu() {
-            if (itens.style.display == 'flex'){
-                itens.style.display = 'none'
-            } else{
-                itens.style.display = 'flex'
-            }
-        }
-    </script> 
+                    <p>Peixes ou Piscis é o décimo segundo, e último signo astrológico do zodíaco, situado entre Aquário e Áries e associado à constelação de Pisces. Seu símbolo são dois peixes. Forma com Câncer e Escorpião a triplicidade dos signos da Água. É também um dos quatro signos mutáveis, juntamente com Gêmeos, Virgem e Sagitário. </p>
+
+                    <img class="img2" src="imagens/peixes/maksym-sirman-MRpMpHFz6eQ-unsplash.jpg" alt="">
+
+                    <p>Os peixes são animais vertebrados, aquáticos, tipicamente ectotérmicos, que possuem o corpo fusiforme, os membros transformados em barbatanas ou nadadeiras (ausentes em alguns grupos) sustentadas por raios ósseos ou cartilaginosos, guelras ou brânquias com que respiram o oxigénio dissolvido na água (embora os dipnóicos usem pulmões) e, na sua maior parte, o corpo coberto de escamas.</p>
+
+                    <ul class="atributos">
+                        <li>Subfilo:	Vertebrata</li>
+                        <li>Superclasse:	Peixes</li>
+                    </ul>
+
+                    <div class="informacao">
+                        <p>Uma forma de classificar os peixes é segundo o seu comportamento relativamente à região das águas onde vivem; este comportamento determina o papel de cada grupo no ambiente aquático</p>
+                    </div>
+        </main>
+        <aside class="anuncios">
+            <div class="anuncios-itens">
+                <img src="imagens/anucios/eleni-afiontzi-gLU8GZpHtRA-unsplash.jpg" alt="">
+            </div>
+            <div class="anuncios-itens">
+                <img src="imagens/anucios/museums-victoria-RCuDCstVPvw-unsplash.jpg" alt="">
+            </div>
+        </aside>
+        <footer class="footer">
+            <p> 2020-2021. Alguns direiros reservados.</p>
+        </footer>
+    </div>
 </body>
 </html>
