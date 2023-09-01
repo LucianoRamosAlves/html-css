@@ -167,6 +167,9 @@ body{
 .naveg li:nth-child(2):hover{
     background-color: #fca211ea;
 }
+.naveg li{
+    height:100px;
+}
 
 
 .principal{
