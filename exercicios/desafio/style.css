@@ -1,0 +1,91 @@
+
+.estrutura{
+position: relative;
+width: 100%;
+height: 100vh;
+background: black;
+overflow: hidden;
+
+}
+.a{
+    background: #fff;
+    height: 240vh;
+    width: 100px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    box-shadow: inset -10px 0 40px rgba(0,0,0,1);
+    inset: 10px 0 40px rgba(0,0,0,1);
+    inset:-10px 0 10px rgba(225,225,225,0.25);
+    inset: 10px 0 10px rgba(225,225,225,0.25),0 0 50px rgba(0,0,0,1);
+
+
+}
+@keyframes anime{
+    0%{
+        background-position: 0 0;
+        background: #222 radial-gradient(rgb(3, 255, 3) 8px, #000 9px, #000 13px, transparent 13px);
+        background-size: 35px 35px;
+  
+    }
+    100%{
+        background-position: 35px -35px;
+    }
+    
+}
+@keyframes anime1{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: -35px -35px;
+    }
+    
+}
+@keyframes anime2{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: -35px -35px;
+    }
+    
+}
+
+
+.a.a1{
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #222 radial-gradient(rgb(0, 255, 0) 13px, #000 9px, #000 13px, transparent 13px);
+    background-size: 35px 35px;
+    z-index: 5;
+    animation: anime 2s linear infinite;
+}
+.a.a2{
+    transform: translate(-50%, -38%) rotate(45deg);
+    background: #222 radial-gradient(rgb(255, 87, 20) 9px, #000 9px, #000 13px, transparent 13px);
+    background-size: 35px 35px;
+    animation: anime1 2s linear infinite;
+}.a.a3{
+    transform: translate(-50%, -62%) rotate(45deg);
+    background: #222 radial-gradient(rgb(255, 191, 0) 9px, #000 9px, #000 13px, transparent 13px);
+    background-size: 35px 35px;
+    animation: anime1 2s linear infinite;
+}
+.a.a4{
+    transform: translate(-50%, -50%) rotate(-45deg);
+    background: #222 radial-gradient(rgb(20, 20, 255) 9px, #000 9px, #000 13px, transparent 13px);
+    background-size: 35px 35px;
+    z-index: 6;
+    animation: anime2 2s linear infinite;
+}
+.a.a5{
+    transform: translate(-50%, -38%) rotate(-45deg);
+    background: #222 radial-gradient(rgb(255, 21, 197)00 9px, #000 13px, transparent 13px);
+    background-size: 35px 35px;
+    animation: anime1 2s linear infinite;
+}.a.a6{
+    transform: translate(-50%, -62%) rotate(-45deg);
+    background: #222 radial-gradient(rgb(8, 255, 255) 9px, #000 9px, #000 13px, transparent 13px);
+    background-size: 35px 35px;
+    animation: anime1 2s linear infinite;
+}

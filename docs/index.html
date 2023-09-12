@@ -40,12 +40,15 @@
                 or <br> <br> use your email registration
             </p> 
             <form action="php_cadrasto" method="get">
-                <label for=""> seu nome:</label>
-                <input type="text" name="nome" id="nome">
+                <label for="nome"> seu nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="nome completo">
+                
                 <label for="email"> seu email:</label>
-                <input type="email" name="email" id="email">
-                <label for="php_cadrasto">sua senha:</label required>
-                <input type="password" name="senha" id="senha" required>
+                <input type="email" name="email" id="email" placeholder="email ativo">
+
+                <label for="senha">sua senha:</label>
+                <input type="password" name="senha" id="senha" required placeholder="minímo 6 caracteres" minlength="6" maxlength="10">
+
                 <input type="submit" value=" sing up " id="botao">
             </form>
         </section>
@@ -54,7 +57,13 @@
 
     </div>
     <script>
-        alert('Boa Experiençias')
+        // alert('Boa Experiençias')
+        // confirm('gostou do desing ?')
+        // prompt('Qual seu nome ?')
+
+        var nome =prompt ('Qual seu nome')
+        alert('Seja Bem vindo ' + nome)
+        /* o valor digitado no prompt é guardado en var nome,depois em alerte aparece o texto mais o var nome*/
         
     </script>
 </body>
