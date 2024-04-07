@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+  </head>
+  <body>
+    <h1>Formulário de Inscrição</h1>
+    <form action="#" method="get">
+      <div>
+          <label for="nome"> Nome:</label>
+          <br />
+          <input type="text" id="nome" />
+          <br />
+      </div>
+      <div>
+          <label for="email">Email:</label>
+          <br />
+          <input type="email" id="email" />
+          <br />
+      </div>
+      <div>
+          <label for="number">WhatsApp:</label><br />
+          <input type="number" id="number" />
+      </div>
+      <div>
+        <label for="senha">senha:</label>
+          <br />
+          <input type="password" id="senha" />
+      </div>
+      <label for="radio">Área de atuação:</label>
+      <div>
+          <input type="radio" name="radio" id="d" />
+          <label for="d"> Desenvolvimento</label>
+          <input type="radio" name="radio" id="q" />
+          <label for="q"> Quality Assurance(QA)</label>
+          <input type="radio" name="radio" id="a" />
+          <label for="a"> Análise de Dados</label>
+          <input type="radio" name="radio" id="i" />
+          <label for="i"> insfraestrutura</label>
+      </div>
+      <div>
+          <label for="text">Observações:</label>
+          <br />
+          <textarea name="text" id="text" cols="30" rows="10"></textarea>
+      </div>
+      <div>
+          <label for="sel">selecione uma cor</label>
+          <select name="sel" id="sel">
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option value="a">azul</option>
+            <option value="v">vermelho</option>
+            <option value="p">preto</option>
+            <option value="v">verde</option>
+            <option value="r">rosa</option>
+          </select>
+      </div>
+      <div>
+          <input type="checkbox" id="che" />
+          <label for="che">Desejo receber novidades e ofertas por email.</label>
+      </div>
+      <input type="submit" />
+    </form>
+  </body>
+</html>
