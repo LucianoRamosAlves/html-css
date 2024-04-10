@@ -1,0 +1,143 @@
+*{
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Saira Semi Condensed", sans-serif;
+    font-weight: 300;
+}
+:root{
+    --cor-background:#111D4A;
+    --cor-azul-fraco:#8380B6;
+    --cor-verde:#091E05;
+    --cor-branco:#F4ECD6;
+    --cor-vinho:#2B061E;
+    --font-p:font-family: "M PLUS 1 Code", monospace;
+}
+/* primeiro estiliza as tags gerenicas */
+body{
+    background-color: var(--cor-background);
+    color: var(--cor-branco);
+}
+a{
+    color: var(--cor-azul-fraco);
+}
+/* agora são as especificas */
+.start{
+    position: relative;
+    /* minimo .já começa com a autura 100% do visivel */
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.1), var(--cor-background));
+}
+.start-video{
+    /* absolute sai do fluxo, fica a frente e ativa o poder de colocar manuamente a posição usando top,button etc...*/
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    /* como o elemento se encaixa em algo */
+}
+.start-more{
+    padding-top: 40vh;
+    text-align: center;
+}
+.start-title{
+    font-size: 5rem;
+    font-weight: 100;
+}
+.start-text{
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+.section{
+    text-align: center;
+    padding: 0 8rem;
+    overflow: hidden;
+}
+.section-title{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: var(--font-p);
+    font-size: 2rem;
+}
+.fotos-img,.fotos-img-inline{
+    width:100%;
+    border-radius: .80rem;
+    /* eixo x, eixo y . blur ou esplahramento, expansão ou recuo é opcional , cor*/
+    box-shadow: 0 2rem 1rem -0.5rem rgba(0, 0, 0, 0.25);
+    /* para quando mexer na ultura , nao retorcer*/
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    max-height: 30rem;
+}
+#saxicolor,#kotiya{
+    width: 90%;
+    display: block;
+    margin: auto;
+    
+}
+.section-text,.section-text-inline{
+    font-size: 1.25rem;
+    line-height: 1.75;
+    margin: 4rem auto;
+}
+.fotos-img-inline{
+    /* como usei o float alguns paragrafos, textos, do proximo tema, acaba invadiondo a imagem tbm, e só quero a imagem e sua legenda , e naõ a mistura do testo seguinte , para evitar isso , vai lá na tag pai, elemento pai e coloca overflow hidden , elemento filho maior que o pai*/
+    float: left;
+    height: 25rem;
+    width: 20rem;
+    margin-right:4rem ;
+    margin-bottom: 2rem;
+    border-top-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+}
+.section-text-inline{
+    text-align: left;
+    margin-top: 6rem;
+}
+.section-text-inline > p{
+    margin-top: 1.5rem;
+}
+.galeria-img-caixa{
+    position: relative;
+    display: inline-block;
+}
+.galeria-img{
+    border-radius: 0.8rem;
+    height: 16rem;
+    width: 16rem;
+    object-fit: cover;
+    transform: rotate(-2deg);
+}
+.galeria-img-caixa + .galeria-img-caixa{
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+.galeria-img-caixa:nth-child(even) > .galeria-img{
+    transform: rotate(2deg);
+    top: 1rem;
+    /* movo a foto oara cima, mas para ativar ten q colocar no pai position reative*/
+}
+.galeria-img-caixa::after{
+    content: "";
+    background-color: #2B061E;
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
+    top: 0.25rem;
+    right: 1rem;
+    border-radius: 50%;
+}
+.galeria-img-caixa:nth-child(even)::after{
+    left: 1rem;
+}
+footer{
+    margin-top: 4rem;
+    text-align: center;
+    background-color: var(--cor-vinho);
+    padding: 2rem;
+}
