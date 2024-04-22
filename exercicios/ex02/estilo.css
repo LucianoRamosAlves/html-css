@@ -50,10 +50,10 @@ h1:hover{ background-color: rgba(105, 105, 105, 0.622);
     text-decoration: none;
     color: #0A122A;
  }
- ..main{
+ .main{
     background-image: url('/img/page-turner.png');
     background-size: cover;
     background-position: center center;
     margin-top: 30px;
     
- }
+}
