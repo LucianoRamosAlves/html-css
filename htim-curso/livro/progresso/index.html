@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h2> Andamento da tarefa</h2>
+        <p> progresso: <progress id="p" max="100"> <span>0</span> <span>%</span></progress></p>
+        <script>
+            let barraAndamento = document.getElementById('p');
+            function updateProgress(valorAtual){
+                barraAndamento.value = valorAtual
+                barraAndamento.getElementsByTagName('span')[0].textContent = valorAtual;
+            }
+        </script>
+    </section>
+</body>
+</html>

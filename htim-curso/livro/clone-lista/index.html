@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template class="lista">
+        <!-- scoped pois estilizo só a lista do templade, não pega nos outros ul -->
+        <style scoped> 
+            ul{ margin: 0 ; padding: 0; list-style: none;}
+        </style>
+        <h2 id="tit"></h2>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </template>
+    <button id="fruta"> mostrar livros</button>
+    <button id="cor"> mostrar cores</button>
+    <div class="box"></div>
+    <script>
+        let titulo = ['Fruta', 'Cores']
+        let fruta = ['banana' , 'melancia' , 'melão' , 'uva']
+        let cor = ['amarelo' , 'vermelho' , 'verde' , 'azul']
+        let template = document.querySelector('.lista')
+        let clone = template.content.cloneNode(true)
+        let tit = clone.querySelector('#tit')
+        let intens = clone.querySelectorAll('li')
+        let botao = document.querySelectorAll('button')
+         for (let k = 0; k < botao.length; k++){
+            // resolva esse bug, tem 2 for var igual no if e else, pois meio que não tava reconhecendo no button, crei uma maniera de chamar esse for pelo if e else ou pelo butao, o erro ta no botão que não ta reconhecendo esse for fora do if e else
+            
+            botao[k].onclick = function(){
+                if(this.id == 'fruta'){
+                    let intemInserido = fruta;
+                    tit.textContent = titulo[0]
+                    for(var i = 0; i < intemInserido.length ; i++) {
+                intens[i].textContent = intemInserido[i];}
+                } else {
+                    let intemInserido = cor;
+                    tit.textContent = titulo[1]
+                    for(var i = 0; i < intemInserido.length ; i++) {
+                intens[i].textContent = intemInserido[i];
+            }
+                }
+            document.querySelector('.box').appendChild(clone);
+            }
+         }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> preço unitario do produto</p>
+    <form action="" method="" name="formulario">
+        <p><label for="">quantidade <input type="text" name="qde"></label></p>
+        <p> valor total: <output name="vtotal"> </output></p> 
+        <!-- com script exibo o valor total nessa tag -->
+    </form>
+</body>
+<script>
+    function calc(){
+        let qdtIntes = document.getElementsByTagName('qde').value;
+        console.log(qde)
+        let valorTotal = ( qdtIntes * 320).toFixed(2)
+        document.forms['formulario']['vtotal'].value = valorTotal;
+    }
+    window.onload = function(){
+        document.forms['formulario']['qde'].onblur = calc;
+    }
+</script>
+</html>
