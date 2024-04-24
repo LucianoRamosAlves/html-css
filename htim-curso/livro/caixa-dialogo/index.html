@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <dialog>
+        <h3> janela model</h3>
+        <p> conteudo da janela</p>
+
+        <button id="fechar"> fechar janela model</button>
+    </dialog>
+    <button id="abrir"> abrir janela model</button>
+</body>
+<script>
+    let janela = document.querySelector('dialog');
+    document.querySelector('#abrir').onclick = function(){
+        janela.show();
+    }
+    document.querySelector('#fechar').onclick = function(){
+        janela.close();
+    }
+
+</script>
+</html>
