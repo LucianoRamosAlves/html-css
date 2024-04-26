@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <audio preload="metadata"> <!--preload tem o none, navegador não carrega o audio, metadata carrega somente os dados do som, auto indica que seré pré carregado -->
+        <source src="production-elements-impactor-e-188986.mp3" type="audio/mp3">
+        <source src="som.mp3" type="audio/mpeg">
+        <p>Seu navegador não suporta o elemento audio HTML5</p>
+    </audio>
+    <div id="fundo-controles">
+        <input type="button" id="play" value="play" src="production-elements-impactor-e-188986.mp3">
+        <input type="button" id="pause" value="pause" src="pause.png">
+        <input type="button" value="volume(+)" id="vmais" src="vmais.png">
+        <input type="button" value="volume(-)" id="vmenos" src="vmenos.png">
+
+    </div>
+    <script>
+        // bug, usar a biblioteca
+       function id(id){
+            return document.getElementById('id')
+        }
+        function init(){
+            let conteiner = id('fundo-controles');
+            let ctr = id ("som")
+            let play = id('play');
+            let pause = document.getElementById("pause")
+            let vmais = document.getElementById("vmais")
+            let vmenos = document.getElementById("vmenos")
+            if(!Modernizr.audio){
+                conteiner.style.display = "none"
+            } else{
+                play.addEventListener('click',function(){
+                    ctr.play();
+                    ctr.volume = 1;
+                },false);
+                pause.addEventListener('click',function(){
+                    ctr.pause();
+                }, false);
+                vmais.addEventListener('click',function(){
+                    ctr.play();
+                    ctr.volume += 0.25;25.
+                }, false);
+                vmenos.addEventListener('click',function(){
+                    alert()
+                    ctr.play();
+                    ctr.volume-= 0.25
+                }, false);
+            }
+        }
+        window.onload = init;
+    </script>
+</body>
+</html>
