@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pesquisar.css">
+</head>
+<body>
+    <div class="pesquisa-container">
+
+  <select class="pesquisa_tipo" id="pesquisa_tipo">
+    <option value="id" nome="pesq" id="pesq">ID</option>
+    <option value="nome" nome="pesq" id="pesq">Nome</option>
+    <option value="telefone" nome="pesq" id="pesq">Telefone</option>
+    <option value="email" nome="pesq" id="pesq">E-mail</option>
+  </select>
+
+  <input id="valor_pesquisar"
+    type="text" 
+    class="pesquisa-input" 
+    placeholder="Digite para pesquisar..."
+  >
+
+  <button class="pesquisa_btn" id="pesquisa_btn">
+    Pesquisar
+  </button>
+
+</div>
+<script src="pesquisar.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda</title>
+  <link rel="stylesheet" href="novo.css">
+</head>
+
+<body id="novo">
+
+<form id="form-agenda" novalidate>
+  <!-- novalidate desliga validação automática do navegador -->
+
+  <div class="elementsform">
+
+    <!-- ID -->
+    <div class="campoform">
+      <label for="id">ID</label>
+      <input type="number" id="id" name="id">
+      <small></small>
+    </div>
+
+    <!-- Nome -->
+    <div class="campoform">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" placeholder="Seu nome">
+      <small></small>
+    </div>
+
+    <!-- Telefone -->
+    <div class="campoform">
+      <label for="telefone">Telefone</label>
+      <input type="tel" id="telefone" name="telefone" placeholder="(99) 90000-0000">
+      <small></small>
+    </div>
+
+    <!-- Email -->
+    <div class="campoform">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="exemplo@email.com">
+      <small></small>
+    </div>
+
+    <!-- Data -->
+    <div class="campoform">
+      <label for="data">Data</label>
+      <input type="date" id="data" name="data">
+      <small></small>
+    </div>
+
+    <!-- Hora -->
+    <div class="campoform">
+      <label for="hora">Hora</label>
+      <input type="time" id="hora" name="hora">
+      <small></small>
+    </div>
+
+    <!-- Categoria -->
+    <div class="campoform">
+      <label for="categoria">Categoria</label>
+      <select id="categoria" name="categoria">
+        <option value="">Selecione</option>
+        <option value="trabalho">Trabalho</option>
+        <option value="pessoal">Pessoal</option>
+        <option value="estudo">Estudo</option>
+      </select>
+      <small></small>
+    </div>
+
+    <!-- Observações -->
+    <div class="campoform">
+      <label for="observacao">Observações</label>
+      <textarea id="observacao" name="observacao" placeholder="Observações"></textarea>
+      <small></small>
+    </div>
+
+  </div>
+
+  <!-- Botões -->
+  <div class="botoesform">
+    <button type="button" class="btn btn_cancelar" id="btn_cancelar">Cancelar</button>
+    <button type="button" class="btn btn_gravar" id="btn_Gravar">Gravar</button>
+  </div>
+
+</form>
+
+<script src="novo.js"></script>
+</body>
+</html>
