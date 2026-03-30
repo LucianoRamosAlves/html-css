@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<!-- Define que este é um documento HTML5 -->
+
+<html lang="pt-BR">
+<!-- Tag raiz que envolve todo o conteúdo da página -->
+
+<head>
+    <!-- Contém metadados e informações sobre a página -->
+    
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8 -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Torna a página responsiva em dispositivos móveis -->
+    
+    <title>Todas as Tags HTML</title>
+    <!-- Título que aparece na aba do navegador -->
+    
+    <style>
+        body { font-family: Arial, sans-serif; }
+    </style>
+    <!-- Define estilos CSS -->
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- Vincula um arquivo CSS externo -->
+    
+    <script src="script.js"></script>
+    <!-- Carrega um arquivo JavaScript externo -->
+</head>
+
+<body>
+    <!-- Contém todo o conteúdo visível da página -->
+
+    <!-- SEÇÕES E ESTRUTURA -->
+    <header>
+        <!-- Cabeçalho da página ou seção -->
+        <h1>Bem-vindo ao Guia de Tags HTML</h1>
+    </header>
+
+    <nav>
+        <!-- Menu de navegação -->
+        <ul>
+            <li><a href="#conteudo">Conteúdo</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Conteúdo principal da página -->
+        
+        <section id="conteudo">
+            <!-- Agrupa conteúdo temático relacionado -->
+            
+            <article>
+                <!-- Define um artigo independente -->
+                
+                <h2>Títulos</h2>
+                <!-- h1 a h6: Títulos com diferentes níveis de importância -->
+                <h3>Exemplo de H3</h3>
+                <h4>Exemplo de H4</h4>
+                <h5>Exemplo de H5</h5>
+                <h6>Exemplo de H6</h6>
+
+                <h2>Parágrafos e Texto</h2>
+                <p>Esta é uma tag de parágrafo. Agrupa texto em blocos.</p>
+                <!-- p: Parágrafo -->
+
+                <p>
+                    Este é um texto com <strong>texto em negrito semântico</strong> e 
+                    <b>texto em negrito visual</b>.
+                </p>
+                <!-- strong: Indica importância (semântico) -->
+                <!-- b: Apenas destaca visualmente (não semântico) -->
+
+                <p>
+                    Este é um texto com <em>ênfase semântica</em> e 
+                    <i>itálico visual</i>.
+                </p>
+                <!-- em: Ênfase semântica (geralmente itálico) -->
+                <!-- i: Itálico apenas visual (não semântico) -->
+
+                <p>Este é um texto com <mark>marcação em destaque</mark>.</p>
+                <!-- mark: Marca/destaca texto -->
+
+                <p>H<sub>2</sub>O é a fórmula da água.</p>
+                <!-- sub: Subscrito (índice inferior) -->
+
+                <p>E = mc<sup>2</sup></p>
+                <!-- sup: Sobrescrito (índice superior) -->
+
+                <p><del>Este texto foi deletado</del> e <ins>este foi inserido</ins>.</p>
+                <!-- del: Texto deletado/removido -->
+                <!-- ins: Texto inserido -->
+
+                <p><s>Texto com risco</s> e <u>texto sublinhado</u>.</p>
+                <!-- s: Texto com linha de risco -->
+                <!-- u: Texto sublinhado -->
+
+                <p><code>var x = 10;</code> é um exemplo de código.</p>
+                <!-- code: Código inline (em linha) -->
+
+                <p><kbd>Ctrl</kbd> + <kbd>C</kbd> para copiar.</p>
+                <!-- kbd: Entrada de teclado -->
+
+                <p><samp>Isto é uma saída de programa</samp>.</p>
+                <!-- samp: Saída de um programa -->
+
+                <p><var>x</var> = 5 é uma variável.</p>
+                <!-- var: Representa uma variável -->
+
+                <p><small>Este é um texto pequeno</small>.</p>
+                <!-- small: Texto pequeno (também para avisos legais) -->
+
+                <blockquote>
+                    <!-- Citação em bloco (com indentação) -->
+                    "Esta é uma citação de bloco que pode ocupar várias linhas."
+                    <footer>— Autor Desconhecido</footer>
+                </blockquote>
+
+                <p>Segundo <q>a fonte oficial</q>, isto é verdade.</p>
+                <!-- q: Citação inline (com aspas) -->
+
+                <hr>
+                <!-- Linha horizontal/quebra temática -->
+
+                <h2>Listas</h2>
+
+                <h3>Lista Ordenada</h3>
+                <ol>
+                    <!-- Ordered List: Lista numerada -->
+                    <li>Primeiro item</li>
+                    <!-- List Item: Item da lista -->
+                    <li>Segundo item</li>
+                    <li>Terceiro item</li>
+                </ol>
+
+                <h3>Lista Não-Ordenada</h3>
+                <ul>
+                    <!-- Unordered List: Lista com marcadores -->
+                    <li>Item com marcador</li>
+                    <li>Outro item</li>
+                    <li>Mais um item</li>
+                </ul>
+
+                <h3>Lista de Descrição</h3>
+                <dl>
+                    <!-- Description List: Lista de definições/descrições -->
+                    <dt>HTML</dt>
+                    <!-- Description Term: Termo -->
+                    <dd>Linguagem de marcação para estrutura web</dd>
+                    <!-- Description Definition: Definição -->
+                    
+                    <dt>CSS</dt>
+                    <dd>Linguagem para estilização e layout</dd>
+                </dl>
+
+                <h2>Formulários</h2>
+
+                <form>
+                    <!-- Contém elementos de entrada de dados -->
+                    
+                    <label for="nome">Nome:</label>
+                    <!-- Label: Rótulo para campo de entrada -->
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+                    <!-- input: Campo de entrada (tipo: text) -->
+                    
+                    <br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com">
+                    <!-- input type="email": Validação de email -->
+
+                    <br><br>
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha">
+                    <!-- input type="password": Oculta caracteres -->
+
+                    <br><br>
+
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" name="idade" min="0" max="120">
+                    <!-- input type="number": Apenas números -->
+
+                    <br><br>
+
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data">
+                    <!-- input type="date": Seletor de data -->
+
+                    <br><br>
+
+                    <label for="cor">Cor Favorita:</label>
+                    <input type="color" id="cor" name="cor">
+                    <!-- input type="color": Seletor de cor -->
+
+                    <br><br>
+
+                    <label for="arquivo">Upload de Arquivo:</label>
+                    <input type="file" id="arquivo" name="arquivo">
+                    <!-- input type="file": Envio de arquivo -->
+
+                    <br><br>
+
+                    <label for="busca">Buscar:</label>
+                    <input type="search" id="busca" name="busca">
+                    <!-- input type="search": Campo de busca -->
+
+                    <br><br>
+
+                    <label for="url">URL:</label>
+                    <input type="url" id="url" name="url" placeholder="https://exemplo.com">
+                    <!-- input type="url": Validação de URL -->
+
+                    <br><br>
+
+                    <label for="tel">Telefone:</label>
+                    <input type="tel" id="tel" name="tel" placeholder="(11) 99999-9999">
+                    <!-- input type="tel": Campo de telefone -->
+
+                    <br><br>
+
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao" rows="4" cols="50"></textarea>
+                    <!-- textarea: Campo de texto multilinha -->
+
+                    <br><br>
+
+                    <label for="opcoes">Escolha uma opção:</label>
+                    <select id="opcoes" name="opcoes">
+                        <!-- select: Lista suspensa -->
+                        <option value="opcao1">Opção 1</option>
+                        <!-- option: Alternativa em select -->
+                        <option value="opcao2">Opção 2</option>
+                        <option value="opcao3">Opção 3</option>
+                    </select>
+
+                    <br><br>
+
+                    <fieldset>
+                        <!-- Agrupa campos relacionados do formulário -->
+                        <legend>Gênero:</legend>
+                        <!-- legend: Título do fieldset -->
+                        
+                        <input type="radio" id="masculino" name="genero" value="masculino">
+                        <!-- input type="radio": Botão de seleção única -->
+                        <label for="masculino">Masculino</label>
+
+                        <input type="radio" id="feminino" name="genero" value="feminino">
+                        <label for="feminino">Feminino</label>
+                    </fieldset>
+
+                    <br>
+
+                    <input type="checkbox" id="termos" name="termos">
+                    <!-- input type="checkbox": Caixa de seleção (múltipla) -->
+                    <label for="termos">Concordo com os termos</label>
+
+                    <br><br>
+
+                    <input type="submit" value="Enviar">
+                    <!-- input type="submit": Botão para enviar formulário -->
+                    
+                    <input type="reset" value="Limpar">
+                    <!-- input type="reset": Botão para limpar formulário -->
+                    
+                    <button type="button">Botão Personalizado</button>
+                    <!-- button: Botão genérico -->
+
+                    <input type="hidden" name="csrf_token" value="abc123">
+                    <!-- input type="hidden": Campo oculto (dados não visíveis) -->
+                </form>
+
+                <h2>Mídia</h2>
+
+                <img src="imagem.jpg" alt="Descrição da imagem">
+                <!-- img: Insere uma imagem -->
+
+                <picture>
+                    <!-- picture: Define múltiplas imagens responsivas -->
+                    <source media="(max-width: 600px)" srcset="imagem-pequena.jpg">
+                    <source media="(min-width: 601px)" srcset="imagem-grande.jpg">
+                    <img src="imagem-padrao.jpg" alt="Imagem responsiva">
+                </picture>
+
+                <audio controls>
+                    <!-- audio: Reprodutor de áudio -->
+                    <source src="audio.mp3" type="audio/mpeg">
+                    Seu navegador não suporta áudio HTML5.
+                </audio>
+
+                <video width="320" height="240" controls>
+                    <!-- video: Reprodutor de vídeo -->
+                    <source src="video.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo HTML5.
+                </video>
+
+                <svg width="100" height="100">
+                    <!-- svg: Define gráficos vetoriais -->
+                    <circle cx="50" cy="50" r="40" fill="red">
+                        <!-- Elemento SVG: círculo -->
+                    </circle>
+                </svg>
+
+                <canvas id="meuCanvas" width="200" height="200">
+                    <!-- canvas: Área para desenho com JavaScript -->
+                    Seu navegador não suporta canvas.
+                </canvas>
+
+                <h2>Tabelas</h2>
+
+                <table border="1">
+                    <!-- table: Define uma tabela -->
+                    <caption>Tabela de Exemplo</caption>
+                    <!-- caption: Título da tabela -->
+                    
+                    <thead>
+                        <!-- Agrupa cabeçalhos da tabela -->
+                        <tr>
+                            <!-- tr: Linha da tabela -->
+                            <th>Coluna 1</th>
+                            <!-- th: Célula de cabeçalho -->
+                            <th>Coluna 2</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <!-- Agrupa corpo/conteúdo da tabela -->
+                        <tr>
+                            <td>Dados 1</td>
+                            <!-- td: Célula de dados -->
+                            <td>Dados 2</td>
+                        </tr>
+                        <tr>
+                            <td>Dados 3</td>
+                            <td>Dados 4</td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <!-- Agrupa rodapé da tabela -->
+                        <tr>
+                            <td>Total:</td>
+                            <td>100</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <h2>Elementos Semânticos Adicionais</h2>
+
+                <aside>
+                    <!-- Conteúdo relacionado mas separado (sidebar) -->
+                    Esta é uma barra lateral com informações adicionais.
+                </aside>
+
+                <figure>
+                    <!-- Agrupa ilustração, diagrama ou foto -->
+                    <img src="diagrama.jpg" alt="Diagrama explicativo">
+                    <figcaption>Figura 1: Um diagrama de exemplo</figcaption>
+                    <!-- figcaption: Legenda de figura -->
+                </figure>
+
+                <details>
+                    <!-- Detalhes que podem ser expandidos/recolhidos -->
+                    <summary>Clique para mais informações</summary>
+                    <!-- summary: Resumo/título dos detalhes -->
+                    Conteúdo oculto que pode ser expandido.
+                </details>
+
+                <dialog open>
+                    <!-- dialog: Caixa de diálogo -->
+                    <p>Esta é uma caixa de diálogo.</p>
+                    <button>Fechar</button>
+                </dialog>
+
+                <meter value="6" min="0" max="10"></meter>
+                <!-- meter: Medidor/gauge -->
+
+                <progress value="70" max="100"></progress>
+                <!-- progress: Barra de progresso -->
+
+                <h2>Links e Referências</h2>
+
+                <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+                    <!-- a: Hiperlink/âncora -->
+                    Ir para Google (abre em nova aba)
+                </a>
+
+                <p>Jump para <a href="#conteudo">este local</a> da página.</p>
+                <!-- Âncora para outra parte da página -->
+
+                <address>
+                    <!-- Informações de contato/autor -->
+                    Contato: email@example.com<br>
+                    Rua Exemplo, 123
+                </address>
+
+                <pre>
+                    <!-- Preserva formatação e espaçamento -->
+                    Código formatado
+                        com espaçamento
+                            preservado
+                </pre>
+
+                <h2>Elementos Obsoletos (não usar em novo código)</h2>
+                <!-- 
+                <font>: Uso de CSS em vez disso
+                <center>: Use CSS text-align
+                <u>: Use CSS text-decoration
+                <strike>: Use <del> ou CSS
+                <marquee>: Evitar, péssimo para UX
+                <blink>: Irritante e deprecated
+                -->
+
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Rodapé da página -->
+        <p>&copy; 2024 Guia de Tags HTML. Todos os direitos reservados.</p>
+        <!-- &copy; é uma entidade HTML para © -->
+    </footer>
+
+</body>
+</html>
