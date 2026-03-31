@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(90deg, #D6F8D6, transparent);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  line-height: 1.6;
+}
+
+:root {
+  --cor1: #FAF33E;
+  --cor2: #55505C;
+  --cor3: #5D737E;
+  --cor4: #7FC6A4;
+  --cor5: #D6F8D6;
+}
+
+#caixa {
+  color: var(--cor2);
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+  border: 2px dotted var(--cor2);
+  padding: 20px;
+  margin: 5px auto 5px 100px;
+  box-shadow: 10px 10px 10px var(--cor2);
+  text-shadow: 10px 10px 10px var(--cor5);
+  border-radius: 50px;
+  max-width: 90%;
+}
+
+nav {
+  text-align: center;
+  border: 2px solid var(--cor3);
+  padding: 10px;
+  text-transform: uppercase;
+  color: var(--cor3);
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.5s ease;
+}
+
+a:hover {
+  color: crimson;
+  font-size: 1.1em;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.37);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.37);
+}
+
+main {
+  text-align: justify;
+  line-height: 30px;
+  text-indent: 55px;
+  letter-spacing: 1px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+div {
+  display: inline-block;
+  margin: 2px;
+}
+
+footer {
+  border-top: 2px solid var(--cor2);
+  text-align: center;
+  background-color: var(--cor1);
+  padding: 20px;
+  margin-top: 40px;
+}
+
+input {
+  color: var(--cor1);
+  background-color: aqua;
+  font-family: Impact, sans-serif;
+  width: 50px;
+  height: 50px;
+  margin: 25px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+input:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  #caixa {
+    margin-left: 10px;
+    font-size: 1.1em;
+  }
+  
+  nav {
+    flex-direction: column;
+    margin: 10px;
+  }
+  
+  main {
+    padding: 10px;
+    text-indent: 20px;
+  }
+  
+  input {
+    width: 40px;
+    height: 40px;
+    margin: 15px;
+  }
+}

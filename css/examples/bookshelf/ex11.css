@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+}
+
+/* Header with gradient background and smooth transitions */
+header{
+    text-align: center;
+    border-bottom: 2px solid #667eea;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+header h1, p{
+    margin: 1rem 0;
+    animation: slideDown 0.6s ease-out;
+}
+
+/* Main content area with subtle background */
+main{
+    text-align: center;
+    margin-top: 0.5em;
+    background: #f8f9fa;
+    padding: 1rem;
+}
+
+main h2, p, button{
+    margin-top: 0.9em;
+}
+
+/* Modern button styling with hover effects */
+main button{
+    padding: 0.5em;
+    border-radius: 1.5em;
+    border: solid 2px #667eea;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    height: 3em;
+    width: 10em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+main button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(102, 126, 234, 0.4);
+}
+
+main button:active{
+    transform: translateY(-1px);
+}
+
+main section{
+    margin: 0.5em;
+    animation: fadeIn 0.8s ease-in;
+}
+
+main img{
+    width: 100%;
+    height: 50vh;
+    border-radius: 0.5em;
+    transition: transform 0.3s ease;
+}
+
+main img:hover{
+    transform: scale(1.02);
+}
+
+/* Modern nav styling with vibrant colors */
+main nav ul li{
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 1.5em;
+    margin-top: 1em;
+    transition: all 0.3s ease;
+}
+
+main nav ul li:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+main nav ul li a {
+    display: inline-block;
+    padding: 1em;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 1.5em;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+/* Footer with modern dark theme */
+footer{
+    text-align: center;
+    margin-top: 1em;
+    background: linear-gradient(135deg, #2d3436, #636e72);
+    padding: 0.5em;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Keyframe animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
