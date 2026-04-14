@@ -1,0 +1,100 @@
+/* Registration Page Styles */
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+}
+
+.register-wrapper {
+    width: 100%;
+    max-width: 500px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 60px 48px;
+    position: relative;
+}
+
+.register-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.register-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.register-header h1 {
+    font-size: 36px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.register-header p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.register-form .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.register-form .form-group {
+    margin-bottom: 20px;
+}
+
+.register-terms {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin: 24px 0;
+    line-height: 1.6;
+}
+
+.register-terms a {
+    color: var(--gold-light);
+    transition: color 0.3s ease;
+}
+
+.register-terms a:hover {
+    color: var(--gold-primary);
+}
+
+.register-submit {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.register-footer {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.register-footer a {
+    color: var(--gold-light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.register-footer a:hover {
+    color: var(--gold-primary);
+}
+
+@media (max-width: 768px) {
+    .register-wrapper {
+        padding: 40px 32px;
+    }
+
+    .register-header h1 {
+        font-size: 28px;
+    }
+}
