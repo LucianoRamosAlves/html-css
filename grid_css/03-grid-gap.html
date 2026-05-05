@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid - gap, row-gap, column-gap</title>
+    <style>
+        /* ============================================
+           gap, row-gap, column-gap
+           ============================================ */
+
+        /*
+         * As propriedades de gap controlam o ESPAÇAMENTO entre
+         * as células do grid (não afetam bordas externas).
+         * 
+         * ▸ row-gap: Espaçamento entre as LINHAS
+         * ▸ column-gap: Espaçamento entre as COLUNAS
+         * ▸ gap: Shorthand para row-gap e column-gap
+         * 
+         * OBS: Antigamente se usava grid-row-gap, grid-column-gap
+         * e grid-gap (prefixo grid-), mas hoje é apenas gap, 
+         * row-gap e column-gap (funciona também no Flexbox!)
+         */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #e0e0e0;
+        }
+
+        h1 { color: #e94560; margin-bottom: 20px; }
+        h2 { color: #e94560; margin: 30px 0 15px; }
+
+        .explicacao {
+            background: #16213e;
+            padding: 15px;
+            border-left: 4px solid #e94560;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .explicacao code {
+            background: #0f3460;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #e94560;
+            font-size: 1.1em;
+        }
+
+        .container-base {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .container-base > div {
+            background: #0f3460;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .container-base > div:nth-child(odd) { background: #533483; }
+        .container-base > div:nth-child(even) { background: #e94560; color: white; }
+
+        /* ============ EXEMPLO 1: SEM GAP ============ */
+        .sem-gap {
+            gap: 0;
+        }
+
+        /* ============ EXEMPLO 2: column-gap ============ */
+        .col-gap {
+            /* Espaçamento APENAS entre colunas */
+            column-gap: 30px;
+            row-gap: 0;
+        }
+
+        /* ============ EXEMPLO 3: row-gap ============ */
+        .row-gap {
+            /* Espaçamento APENAS entre linhas */
+            row-gap: 30px;
+            column-gap: 0;
+        }
+
+        /* ============ EXEMPLO 4: gap (shorthand) ============ */
+        .gap-total {
+            /* gap: row-gap column-gap */
+            gap: 20px 40px;
+        }
+
+        /* ============ EXEMPLO 5: gap com mesmo valor ============ */
+        .gap-igual {
+            /* Se passar 1 valor, row-gap = column-gap = 15px */
+            gap: 15px;
+        }
+
+        /* ============ EXEMPLO 6: gap grande ============ */
+        .gap-grande {
+            gap: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📐 gap, row-gap, column-gap</h1>
+
+    <div class="explicacao">
+        <p>
+            As propriedades de <strong>gap</strong> controlam o <strong>espaçamento interno</strong> 
+            entre as células do grid. Elas NÃO adicionam espaço nas bordas externas do container!
+        </p>
+        <br>
+        <p>
+            📌 <code>row-gap</code> → Espaço entre as linhas (vertical)<br>
+            📌 <code>column-gap</code> → Espaço entre as colunas (horizontal)<br>
+            📌 <code>gap</code> → Shorthand: <code>gap: row-gap column-gap</code>
+        </p>
+        <br>
+        <p>
+            ⚠️ <strong>Importante:</strong> Antes se usava <code>grid-gap</code>, <code>grid-row-gap</code>, etc.<br>
+            Hoje as versões sem <code>grid-</code> são padrão e funcionam também no Flexbox!
+        </p>
+    </div>
+
+    <!-- EXEMPLO 1 -->
+    <h2>1️⃣ SEM gap - Células grudadas</h2>
+    <div class="explicacao">
+        <p>
+            <code>gap: 0;</code> — Sem espaçamento, as células ficam coladas umas nas outras.
+        </p>
+    </div>
+    <div class="container-base sem-gap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <!-- EXEMPLO 2 -->
+    <h2>2️⃣ Apenas column-gap: 30px</h2>
+    <div class="explicacao">
+        <p>
+            <code>column-gap: 30px;</code> — Espaço APENAS entre as colunas (horizontal).<br>
+            As linhas continuam coladas (row-gap: 0).
+        </p>
+    </div>
+    <div class="container-base col-gap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <!-- EXEMPLO 3 -->
+    <h2>3️⃣ Apenas row-gap: 30px</h2>
+    <div class="explicacao">
+        <p>
+            <code>row-gap: 30px;</code> — Espaço APENAS entre as linhas (vertical).<br>
+            As colunas continuam coladas (column-gap: 0).
+        </p>
+    </div>
+    <div class="container-base row-gap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <!-- EXEMPLO 4 -->
+    <h2>4️⃣ gap: 20px 40px (valores diferentes)</h2>
+    <div class="explicacao">
+        <p>
+            <code>gap: 20px 40px;</code> — Shorthand com dois valores.<br>
+            Primeiro valor = <code>row-gap</code> (20px, vertical)<br>
+            Segundo valor = <code>column-gap</code> (40px, horizontal)
+        </p>
+    </div>
+    <div class="container-base gap-total">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <!-- EXEMPLO 5 -->
+    <h2>5️⃣ gap: 15px (valor único)</h2>
+    <div class="explicacao">
+        <p>
+            <code>gap: 15px;</code> — Com apenas 1 valor, row-gap E column-gap recebem 15px.<br>
+            Equivalente a: <code>row-gap: 15px; column-gap: 15px;</code>
+        </p>
+    </div>
+    <div class="container-base gap-igual">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <!-- EXEMPLO 6 -->
+    <h2>6️⃣ gap: 40px (espaçamento grande)</h2>
+    <div class="explicacao">
+        <p>
+            <code>gap: 40px;</code> — Espaçamento grande entre todas as células.<br>
+            Perceba como a distância entre os itens aumenta significativamente.
+        </p>
+    </div>
+    <div class="container-base gap-grande">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <div class="explicacao" style="margin-top: 30px;">
+        <h2>📝 Resumo</h2>
+        <p>
+            <code>gap: 10px;</code> → 10px entre linhas E colunas<br>
+            <code>gap: 10px 20px;</code> → 10px entre linhas, 20px entre colunas<br>
+            <code>row-gap: 10px;</code> → Só espaço entre linhas<br>
+            <code>column-gap: 20px;</code> → Só espaço entre colunas<br>
+            <br>
+            🔹 Use <code>gap</code> (shorthand) na maioria dos casos para código mais limpo!
+        </p>
+    </div>
+</body>
+</html>

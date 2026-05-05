@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid - grid-template-columns e grid-template-rows</title>
+    <style>
+        /* ============================================
+           grid-template-columns e grid-template-rows
+           ============================================ */
+
+        /* 
+         * ESSAS SÃO AS PROPRIEDADES MAIS IMPORTANTES DO GRID!
+         * 
+         * grid-template-columns: Define a quantidade e tamanho das COLUNAS
+         * grid-template-rows: Define a quantidade e tamanho das LINHAS
+         * 
+         * VALORES POSSÍVEIS:
+         * 
+         * ▸ px, em, rem, % - Unidades fixas/relativas
+         * ▸ fr - Frações do espaço disponível
+         * ▸ auto - Tamanho automático baseado no conteúdo
+         * ▸ minmax(min, max) - Tamanho mínimo e máximo
+         * ▸ repeat(n, tamanho) - Repete n vezes um valor
+         */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #e0e0e0;
+        }
+
+        h1 { color: #e94560; margin-bottom: 20px; }
+        h2 { color: #e94560; margin: 30px 0 15px; }
+
+        .explicacao {
+            background: #16213e;
+            padding: 15px;
+            border-left: 4px solid #e94560;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .explicacao code {
+            background: #0f3460;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #e94560;
+        }
+
+        .container {
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .container > div {
+            background: #0f3460;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        /* Cores alternadas para os itens */
+        .container > div:nth-child(odd) { background: #533483; }
+        .container > div:nth-child(even) { background: #e94560; color: white; }
+
+        /* ============ EXEMPLO 1: repeat() ============ */
+        .grid-repeat {
+            display: grid;
+            /*
+             * repeat(4, 1fr) = Cria 4 colunas de 1fr cada
+             * Equivalente a: 1fr 1fr 1fr 1fr
+             * 
+             * O repeat() simplifica muito quando queremos
+             * várias colunas do mesmo tamanho
+             */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        /* ============ EXEMPLO 2: repeat() com auto-fill ============ */
+        .grid-auto-fill {
+            display: grid;
+            /*
+             * repeat(auto-fill, minmax(150px, 1fr))
+             * 
+             * auto-fill: Cria quantas colunas couberem no container
+             * minmax(150px, 1fr): Cada coluna tem no mínimo 150px
+             * e no máximo 1fr (espaço disponível)
+             * 
+             * ISSO CRIA UM LAYOUT TOTALMENTE RESPONSIVO SEM MEDIA QUERIES!
+             */
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        /* ============ EXEMPLO 3: minmax() ============ */
+        .grid-minmax {
+            display: grid;
+            /*
+             * minmax(100px, 300px) = A coluna terá no mínimo 100px
+             * e no máximo 300px. O navegador decide o melhor valor
+             * dentro desse intervalo
+             */
+            grid-template-columns: minmax(100px, 300px) minmax(200px, 500px);
+            gap: 10px;
+        }
+
+        /* ============ EXEMPLO 4: auto ============ */
+        .grid-auto {
+            display: grid;
+            /*
+             * auto = O tamanho é definido pelo conteúdo
+             * 
+             * 1ª coluna: tamanho do conteúdo
+             * 2ª coluna: 2fr (ocupa o resto)
+             * 3ª coluna: tamanho do conteúdo
+             */
+            grid-template-columns: auto 2fr auto;
+            gap: 10px;
+        }
+
+        /* ============ EXEMPLO 5: Misturando unidades ============ */
+        .grid-misto {
+            display: grid;
+            /*
+             * Podemos misturar diferentes unidades:
+             * 1ª coluna: 100px fixos
+             * 2ª coluna: 30% do container
+             * 3ª coluna: 1fr (restante)
+             */
+            grid-template-columns: 100px 30% 1fr;
+            gap: 10px;
+        }
+
+        /* ============ EXEMPLO 6: grid-template-rows ============ */
+        .grid-rows {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /*
+             * grid-template-rows: Define alturas específicas para
+             * cada linha
+             * 
+             * 1ª linha: 80px de altura
+             * 2ª linha: 150px de altura
+             * 3ª linha: 100px de altura
+             */
+            grid-template-rows: 80px 150px 100px;
+            gap: 10px;
+        }
+        .grid-rows > div:nth-child(1) { background: #533483; }
+        .grid-rows > div:nth-child(2) { background: #e94560; color: white; }
+        .grid-rows > div:nth-child(3) { background: #0f3460; }
+        .grid-rows > div:nth-child(4) { background: #533483; }
+        .grid-rows > div:nth-child(5) { background: #e94560; color: white; }
+        .grid-rows > div:nth-child(6) { background: #0f3460; }
+    </style>
+</head>
+<body>
+    <h1>📐 grid-template-columns e grid-template-rows</h1>
+
+    <div class="explicacao">
+        <p>
+            <strong>grid-template-columns</strong> e <strong>grid-template-rows</strong> 
+            são as propriedades que definem a <strong>estrutura</strong> do grid.
+        </p>
+        <br>
+        <p>
+            📌 <code>grid-template-columns</code> → Define quantas colunas e seus tamanhos<br>
+            📌 <code>grid-template-rows</code> → Define quantas linhas e seus tamanhos
+        </p>
+        <br>
+        <p>
+            Cada valor na lista representa uma coluna/linha. Exemplo:<br>
+            <code>grid-template-columns: 100px 200px 100px</code> = 3 colunas (100px, 200px, 100px)
+        </p>
+    </div>
+
+    <!-- EXEMPLO 1 -->
+    <h2>1️⃣ repeat(4, 1fr) - 4 colunas iguais</h2>
+    <div class="explicacao">
+        <p>
+            <code>grid-template-columns: repeat(4, 1fr);</code><br>
+            O <code>repeat()</code> repete um valor N vezes. Aqui: 4 colunas de 1fr cada.<br>
+            ✨ <strong>Dica:</strong> Use <code>repeat()</code> sempre que precisar de colunas/linhas repetidas!
+        </p>
+    </div>
+    <div class="container grid-repeat">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <!-- EXEMPLO 2 -->
+    <h2>2️⃣ auto-fill - GRID RESPONSIVO MÁGICO</h2>
+    <div class="explicacao">
+        <p>
+            <code>grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));</code><br>
+            🔥 <strong>Esse é um dos padrões mais úteis do Grid!</strong><br>
+            <code>auto-fill</code> cria automaticamente quantas colunas couberem no container.<br>
+            <code>minmax(150px, 1fr)</code> = cada coluna tem no mínimo 150px, no máximo 1fr.<br>
+            <br>
+            Redimensione a tela para ver a mágica acontecer! ✨
+        </p>
+    </div>
+    <div class="container grid-auto-fill">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <!-- EXEMPLO 3 -->
+    <h2>3️⃣ minmax() - Flexibilidade controlada</h2>
+    <div class="explicacao">
+        <p>
+            <code>grid-template-columns: minmax(100px, 300px) minmax(200px, 500px);</code><br>
+            2 colunas onde:<br>
+            - Coluna 1: mínimo 100px, máximo 300px<br>
+            - Coluna 2: mínimo 200px, máximo 500px<br>
+            O navegador ajusta dentro desses limites conforme o espaço disponível
+        </p>
+    </div>
+    <div class="container grid-minmax">
+        <div>100px ~ 300px</div>
+        <div>200px ~ 500px</div>
+    </div>
+
+    <!-- EXEMPLO 4 -->
+    <h2>4️⃣ auto - Tamanho pelo conteúdo</h2>
+    <div class="explicacao">
+        <p>
+            <code>grid-template-columns: auto 2fr auto;</code><br>
+            <code>auto</code> faz a coluna ter o tamanho exato do conteúdo.<br>
+            Útil para colunas que devem se adaptar ao conteúdo (ex: imagens, texto)
+        </p>
+    </div>
+    <div class="container grid-auto">
+        <div>Conteúdo pequeno</div>
+        <div>Esta coluna tem 2fr e ocupa o espaço restante</div>
+        <div>P<br>e<br>q<br>u<br>e<br>n<br>o</div>
+    </div>
+
+    <!-- EXEMPLO 5 -->
+    <h2>5️⃣ Misturando unidades</h2>
+    <div class="explicacao">
+        <p>
+            <code>grid-template-columns: 100px 30% 1fr;</code><br>
+            Podemos misturar px, %, fr, etc.<br>
+            1ª coluna: 100px fixos | 2ª coluna: 30% do container | 3ª coluna: resto (1fr)
+        </p>
+    </div>
+    <div class="container grid-misto">
+        <div>100px</div>
+        <div>30%</div>
+        <div>1fr (resto)</div>
+    </div>
+
+    <!-- EXEMPLO 6 -->
+    <h2>6️⃣ grid-template-rows - Alturas definidas</h2>
+    <div class="explicacao">
+        <p>
+            <code>grid-template-rows: 80px 150px 100px;</code><br>
+            Define a altura de CADA LINHA individualmente.<br>
+            Linha 1: 80px | Linha 2: 150px | Linha 3: 100px<br>
+            <br>
+            🔹 Se houver mais linhas que valores definidos, elas se ajustam ao conteúdo
+        </p>
+    </div>
+    <div class="container grid-rows">
+        <div>Linha 1<br>(80px)</div>
+        <div>Linha 1<br>(80px)</div>
+        <div>Linha 1<br>(80px)</div>
+        <div>Linha 2<br>(150px)</div>
+        <div>Linha 2<br>(150px)</div>
+        <div>Linha 2<br>(150px)</div>
+        <div>Linha 3<br>(100px)</div>
+        <div>Linha 3<br>(100px)</div>
+        <div>Linha 3<br>(100px)</div>
+    </div>
+</body>
+</html>

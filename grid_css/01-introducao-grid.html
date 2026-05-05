@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid CSS - Introdução</title>
+    <style>
+        /* ============================================
+           GRID CSS - CONCEITOS FUNDAMENTAIS
+           ============================================ */
+
+        /* 
+         * O CSS Grid Layout é um sistema de layout bidimensional 
+         * (linhas E colunas ao mesmo tempo), diferente do Flexbox 
+         * que é unidimensional.
+         * 
+         * CONCEITOS IMPORTANTES:
+         * 
+         * ▸ Grid Container: O elemento pai que possui display: grid
+         * ▸ Grid Items: Os filhos DIRETOS do container
+         * ▸ Grid Lines: As linhas divisórias (horizontais e verticais)
+         * ▸ Grid Tracks: São as linhas ou colunas do grid
+         * ▸ Grid Cell: A interseção entre uma linha e uma coluna
+         * ▸ Grid Area: Qualquer área retangular composta por células
+         */
+
+        /* ---------- ESTILOS GERAIS ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #e0e0e0;
+        }
+
+        h1 {
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #0f3460;
+            margin: 30px 0 10px;
+        }
+
+        .explicacao {
+            background: #16213e;
+            padding: 15px;
+            border-left: 4px solid #e94560;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .explicacao code {
+            background: #0f3460;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #e94560;
+        }
+
+        /* ---------- EXEMPLO 1: GRID BÁSICO ---------- */
+        .grid-container {
+            /*
+             * display: grid - ATIVA O GRID NO ELEMENTO
+             * O container se torna um grid e todos os filhos 
+             * diretos se tornam grid items automaticamente
+             */
+            display: grid;
+
+            /*
+             * grid-template-columns: Define a quantidade e o tamanho 
+             * das colunas do grid.
+             * Aqui estamos criando 3 colunas de 100px cada
+             */
+            grid-template-columns: 100px 100px 100px;
+
+            /*
+             * grid-template-rows: Define a quantidade e o tamanho 
+             * das linhas do grid.
+             * Aqui estamos criando 2 linhas de 100px cada
+             */
+            grid-template-rows: 100px 100px;
+
+            /*
+             * gap: Define o espaçamento entre as células do grid
+             * (shorthand para row-gap e column-gap)
+             */
+            gap: 10px;
+
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .grid-container > div {
+            background: #0f3460;
+            color: #e94560;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        /* Cada item recebe um background diferente para visualização */
+        .grid-container > div:nth-child(1) { background: #533483; }
+        .grid-container > div:nth-child(2) { background: #e94560; color: white; }
+        .grid-container > div:nth-child(3) { background: #0f3460; }
+        .grid-container > div:nth-child(4) { background: #e94560; color: white; }
+        .grid-container > div:nth-child(5) { background: #533483; }
+        .grid-container > div:nth-child(6) { background: #0f3460; }
+
+        /* ---------- EXEMPLO 2: USANDO FR (FRAÇÕES) ---------- */
+        .grid-fr {
+            display: grid;
+            /*
+             * A unidade fr (fraction) divide o espaço disponível
+             * proporcionalmente entre as colunas.
+             * 1fr 2fr 1fr = 4 partes. Coluna do meio ocupa 2 partes,
+             * as laterais ocupam 1 parte cada.
+             */
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 10px;
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .grid-fr > div {
+            background: #0f3460;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            padding: 30px;
+            border-radius: 4px;
+        }
+
+        .grid-fr > div:nth-child(1) { background: #533483; }
+        .grid-fr > div:nth-child(2) { background: #e94560; }
+        .grid-fr > div:nth-child(3) { background: #0f3460; }
+    </style>
+</head>
+<body>
+    <h1>📐 CSS Grid Layout</h1>
+    
+    <div class="explicacao">
+        <h2>O que é CSS Grid?</h2>
+        <p>
+            <strong>CSS Grid Layout</strong> é um sistema de layout bidimensional criado 
+            especificamente para organizar elementos em <strong>linhas e colunas simultaneamente</strong>.
+        </p>
+        <br>
+        <p>
+            🔹 <strong>Flexbox</strong> = 1 dimensão (ou linha OU coluna)<br>
+            🔹 <strong>Grid</strong> = 2 dimensões (linhas E colunas ao mesmo tempo)
+        </p>
+    </div>
+
+    <div class="explicacao">
+        <h2>Exemplo 1: Grid com tamanhos fixos</h2>
+        <p>
+            Usamos <code>grid-template-columns: 100px 100px 100px</code> para criar 
+            3 colunas de 100px cada.<br>
+            Usamos <code>grid-template-rows: 100px 100px</code> para criar 2 linhas de 100px cada.<br>
+            Total: 6 células (3 colunas × 2 linhas)
+        </p>
+    </div>
+
+    <!-- EXEMPLO 1: Grid com tamanhos fixos -->
+    <div class="grid-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <div class="explicacao" style="margin-top: 30px;">
+        <h2>Exemplo 2: Grid com frações (fr)</h2>
+        <p>
+            A unidade <code>fr</code> (fraction) divide o espaço disponível proporcionalmente.<br>
+            <code>grid-template-columns: 1fr 2fr 1fr</code> = 4 partes no total.<br>
+            Coluna 1 = 1/4, Coluna 2 = 2/4 (metade), Coluna 3 = 1/4 do espaço.
+        </p>
+        <p>📝 <strong>Dica:</strong> Use <code>fr</code> para layouts responsivos sem media queries!</p>
+    </div>
+
+    <!-- EXEMPLO 2: Grid com frações -->
+    <div class="grid-fr">
+        <div>1fr</div>
+        <div>2fr (dobro)</div>
+        <div>1fr</div>
+    </div>
+
+</body>
+</html>

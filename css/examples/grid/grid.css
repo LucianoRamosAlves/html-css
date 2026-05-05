@@ -33,7 +33,21 @@ html{
     --color13:#FF9505;
     --color14:#FFB627;
     --color15:#FFC971;
-
+    --color16:#2D6A4F;
+    --color17:#40916C;
+    --color18:#52B788;
+    --color19:#95D5B2;
+    --color20:#D8F3DC;
+    --color21:#7400B8;
+    --color22:#6930C3;
+    --color23:#5E60CE;
+    --color24:#5390D9;
+    --color25:#64DFDF;
+    --color26:#D00000;
+    --color27:#E01E37;
+    --color28:#FF4D6D;
+    --color29:#FF758F;
+    --color30:#FF8FA3;
 }
 /*grid geral*/
 .estrutura{
@@ -199,6 +213,18 @@ html{
 .naveg li:nth-child(2):hover{
     background-color: #fca211ea;
 }
+.naveg li:nth-child(3):hover{
+    background-color: #FF758F;
+}
+.naveg li:nth-child(4):hover{
+    background-color: #5390D9;
+}
+.naveg li:nth-child(5):hover{
+    background-color: #95D5B2;
+}
+.naveg li:nth-child(6):hover{
+    background-color: #52B788;
+}
 .principal,section{
     grid-area: principal;
     max-width: 900px;
@@ -242,14 +268,26 @@ img{
 .img1{
     grid-area: img1;
     width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 6px 6px 17px 0px rgba(44, 44, 44, 0.15);
 }
 .img2{
     grid-area: img2;
     height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 6px 6px 17px 0px rgba(44, 44, 44, 0.15);
 }
 .img3{
     grid-area: img3;
     height: 600px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 6px 6px 17px 0px rgba(44, 44, 44, 0.15);
 }
 .atributos{
     grid-area: atributos;
@@ -304,6 +342,7 @@ p{
     background-color: var(--color9);
     border-radius: 0 0 10px 10px;
     padding-top: 5px;
+    padding-bottom: 5px;
     color: white;
     font-size:1.2em;   
 }
@@ -318,6 +357,8 @@ p{
 }
 .anuncios img{
     width: 100%;
+    border-radius: 10px;
+    box-shadow: 6px 6px 17px 0px rgba(44, 44, 44, 0.15);
 }
 .atributos{
     padding: 30px;
@@ -346,6 +387,8 @@ p{
     background-color: var(--color5);
     padding: 30px;
     text-align: center;
+    font-size: 1.1em;
+    letter-spacing: 0.05em;
 }
 /*raposa*/
 #raposa > .caixa{
@@ -369,7 +412,90 @@ p{
 .caixa span{
     display: block;
 }
- #raposa .atributos li + li {
-    border-top: 2px solid var(--color11);}
+  #raposa .atributos li + li {
+    border-top: 2px solid var(--color11);
+}
+
+/* ========== JOANINHA ========== */
+#joaninha > .caixa > div{
+    background: linear-gradient(45deg, #D00000, #FF758F);
+}
+#joaninha > .atributos{
+    background: linear-gradient(135deg, #D00000, #FF4D6D);
+}
+#joaninha .especifico{
+    background-color: var(--color30);
+}
+#joaninha .atributos li + li{
+    border-top: 2px solid var(--color26);
+}
+
+/* ========== PINGUIM ========== */
+#pinguim > .caixa > div{
+    background: linear-gradient(45deg, #001233, #5390D9);
+}
+#pinguim > .atributos{
+    background: linear-gradient(135deg, #001233, #5390D9);
+}
+#pinguim .especifico{
+    background-color: var(--color24);
+}
+#pinguim .atributos li + li{
+    border-top: 2px solid #64DFDF;
+}
+
+/* ========== CARACOL ========== */
+#caracol > .caixa > div{
+    background: linear-gradient(45deg, #2D6A4F, #95D5B2);
+}
+#caracol > .atributos{
+    background: linear-gradient(135deg, #2D6A4F, #52B788);
+}
+#caracol .especifico{
+    background-color: var(--color19);
+}
+#caracol .atributos li + li{
+    border-top: 2px solid var(--color16);
+}
+
+/* ========== TARTARUGA ========== */
+#tartaruga > .caixa > div{
+    background: linear-gradient(45deg, #1B4332, #52B788);
+}
+#tartaruga > .atributos{
+    background: linear-gradient(135deg, #1B4332, #40916C);
+}
+#tartaruga .especifico{
+    background-color: var(--color18);
+}
+#tartaruga .atributos li + li{
+    border-top: 2px solid #1B4332;
+}
+
+/* ========== MELHORIAS RESPONSIVAS ADICIONAIS ========== */
+@media (max-width: 600px) {
+    .titulo{
+        font-size: 2em;
+    }
+    p{
+        font-size: 1em;
+    }
+    .img2{
+        height: 250px;
+    }
+    .img3{
+        height: 350px;
+    }
+    .atributos li{
+        font-size: 1.3em;
+        line-height: 60px;
+    }
+    .geral{
+        font-size: 1.5em;
+    }
+    .especifico{
+        font-size: 1em;
+    }
+}
 
 

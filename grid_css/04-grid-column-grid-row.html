@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid - grid-column e grid-row</title>
+    <style>
+        /* ============================================
+           grid-column e grid-row
+           ============================================ */
+
+        /*
+         * ENQUANTO grid-template-columns/rows DEFINE A ESTRUTURA,
+         * grid-column e grid-row POSICIONAM OS ITENS DENTRO DO GRID.
+         * 
+         * CONCEITO FUNDAMENTAL: GRID LINES (LINHAS DO GRID)
+         * 
+         * Em um grid de 3 colunas, temos 4 linhas de grade:
+         *   Col 1  |  Col 2  |  Col 3
+         * 1        2         3         4  ← números das linhas
+         * 
+         * ▸ grid-column-start: linha onde o item começa
+         * ▸ grid-column-end: linha onde o item termina
+         * ▸ grid-column: shorthand (start / end)
+         * 
+         * ▸ grid-row-start: linha onde o item começa
+         * ▸ grid-row-end: linha onde o item termina
+         * ▸ grid-row: shorthand (start / end)
+         * 
+         * IMPORTANTE: grid-column: 1 / 3 significa que o item
+         * ocupa da linha 1 até a linha 3, ou seja, 2 colunas!
+         */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #e0e0e0;
+        }
+
+        h1 { color: #e94560; margin-bottom: 20px; }
+        h2 { color: #e94560; margin: 30px 0 15px; }
+
+        .explicacao {
+            background: #16213e;
+            padding: 15px;
+            border-left: 4px solid #e94560;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .explicacao code {
+            background: #0f3460;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #e94560;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .container > div {
+            background: #0f3460;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        /* ============ EXEMPLO 1: item ocupando 2 colunas ============ */
+        .exemplo1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .exemplo1 > div {
+            background: #0f3460;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .exemplo1 .destaque {
+            background: #e94560;
+            color: white;
+            /*
+             * grid-column: 2 / 4;
+             * O item começa na linha 2 e termina na linha 4
+             * Isso significa que ele ocupa as colunas 2 e 3
+             * (da linha 2 até a linha 4, são 2 colunas)
+             */
+            grid-column: 2 / 4;
+        }
+
+        /* ============ EXEMPLO 2: span ============ */
+        .exemplo2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .exemplo2 > div {
+            background: #0f3460;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .exemplo2 .destaque {
+            background: #e94560;
+            color: white;
+            /*
+             * span 3 = OCUPA 3 COLUNAS
+             * Equivalente a: grid-column: 1 / 4;
+             * Mas com span é mais intuitivo:
+             * "este item ocupa 3 colunas"
+             */
+            grid-column: span 3;
+        }
+
+        /* ============ EXEMPLO 3: grid-row ============ */
+        .exemplo3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .exemplo3 > div {
+            background: #0f3460;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .exemplo3 .destaque {
+            background: #533483;
+            color: white;
+            /*
+             * grid-row: 1 / 3;
+             * Começa na linha 1 e vai até a linha 3
+             * Ocupa 2 linhas completas
+             */
+            grid-row: 1 / 3;
+        }
+
+        /* ============ EXEMPLO 4: Combinando col e row ============ */
+        .exemplo4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .exemplo4 > div {
+            background: #0f3460;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .exemplo4 .header {
+            background: #e94560;
+            color: white;
+            /* Ocupa todas as 4 colunas na primeira linha */
+            grid-column: 1 / 5;
+        }
+
+        .exemplo4 .sidebar {
+            background: #533483;
+            color: white;
+            /* Ocupa 1 coluna e 2 linhas */
+            grid-row: 2 / 4;
+        }
+
+        .exemplo4 .footer {
+            background: #e94560;
+            color: white;
+            /* Ocupa da coluna 2 à 5, na última linha */
+            grid-column: 2 / 5;
+            grid-row: 3 / 4;
+        }
+
+        /* ============ EXEMPLO 5: Usando ordem visual diferente ============ */
+        .exemplo5 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .exemplo5 > div {
+            background: #0f3460;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        /*
+         * POSICIONAMENTO MANUAL com grid-column e grid-row
+         * 
+         * O HTML tem itens de 1 a 9, mas estamos posicionando
+         * cada um manualmente, independente da ordem no HTML!
+         */
+        .exemplo5 .item1 { grid-column: 2 / 3; grid-row: 1 / 2; background: #e94560; color: white; }
+        .exemplo5 .item2 { grid-column: 1 / 2; grid-row: 1 / 2; background: #533483; }
+        .exemplo5 .item3 { grid-column: 3 / 4; grid-row: 1 / 2; background: #0f3460; }
+        .exemplo5 .item4 { grid-column: 1 / 4; grid-row: 3 / 4; background: #e94560; color: white; }
+    </style>
+</head>
+<body>
+    <h1>📐 grid-column e grid-row</h1>
+
+    <div class="explicacao">
+        <p>
+            <strong>grid-column</strong> e <strong>grid-row</strong> são usados nos 
+            <strong>grid items</strong> (filhos) para posicioná-los e definir quanto espaço 
+            ocupam no grid.
+        </p>
+        <br>
+        <p>
+            📌 <code>grid-column: inicio / fim;</code> → Posiciona horizontalmente<br>
+            📌 <code>grid-row: inicio / fim;</code> → Posiciona verticalmente<br>
+            📌 <code>span N</code> → "Ocupa N células" (mais intuitivo!)
+        </p>
+    </div>
+
+    <!-- EXEMPLO 1 -->
+    <h2>1️⃣ Ocupando várias colunas</h2>
+    <div class="explicacao">
+        <p>
+            <code>grid-column: 2 / 4;</code> → O item ocupa da linha 2 à linha 4 (colunas 2 e 3).<br>
+            📌 O item em destaque (6) começa na coluna 2 e termina na coluna 4.
+        </p>
+        <p>
+            ⚡ <strong>Dica:</strong> <code>grid-column: 1 / -1;</code> significa "da primeira à última linha", 
+            ocupando todas as colunas!
+        </p>
+    </div>
+    <div class="exemplo1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div class="destaque">grid-column: 2 / 4</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+
+    <!-- EXEMPLO 2 -->
+    <h2>2️⃣ Usando span (mais fácil!)</h2>
+    <div class="explicacao">
+        <p>
+            <code>grid-column: span 3;</code> → "Este item ocupa 3 colunas".<br>
+            Muito mais intuitivo que usar números de linhas!
+        </p>
+        <p>
+            🔹 <code>grid-column: span 2;</code> ocupa 2 células<br>
+            🔹 <code>grid-row: span 3;</code> ocupa 3 linhas
+        </p>
+    </div>
+    <div class="exemplo2">
+        <div>1</div>
+        <div class="destaque">span 3 (ocupa 3 colunas)</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <!-- EXEMPLO 3 -->
+    <h2>3️⃣ Ocupando várias linhas</h2>
+    <div class="explicacao">
+        <p>
+            <code>grid-row: 1 / 3;</code> → O item ocupa da linha 1 à linha 3 (2 linhas).<br>
+            O item 1 começa na primeira linha e vai até a terceira linha.
+        </p>
+    </div>
+    <div class="exemplo3">
+        <div class="destaque">grid-row: 1 / 3</div>
+        <div>2</div>
+        <div>3</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+
+    <!-- EXEMPLO 4 -->
+    <h2>4️⃣ Layout clássico com Grid (Header, Sidebar, Content, Footer)</h2>
+    <div class="explicacao">
+        <p>
+            Combinando <code>grid-column</code> e <code>grid-row</code> criamos layouts completos!<br>
+            Este é um layout clássico de site:
+        </p>
+        <p>
+            🔹 <strong>Header:</strong> <code>grid-column: 1 / 5</code> (todas as colunas)<br>
+            🔹 <strong>Sidebar:</strong> <code>grid-row: 2 / 4</code> (2 linhas de altura)<br>
+            🔹 <strong>Content:</strong> Posicionamento automático<br>
+            🔹 <strong>Footer:</strong> <code>grid-column: 2 / 5</code> (últimas 3 colunas)
+        </p>
+    </div>
+    <div class="exemplo4">
+        <div class="header">HEADER (grid-column: 1 / 5)</div>
+        <div class="sidebar">SIDEBAR<br>(grid-row: 2 / 4)</div>
+        <div>Content 1</div>
+        <div>Content 2</div>
+        <div>Content 3</div>
+        <div class="footer">FOOTER (grid-column: 2 / 5)</div>
+    </div>
+
+    <!-- EXEMPLO 5 -->
+    <h2>5️⃣ Ordem visual diferente da ordem HTML</h2>
+    <div class="explicacao">
+        <p>
+            Uma das vantagens do Grid: a <strong>ordem visual</strong> pode ser completamente 
+            diferente da <strong>ordem no HTML</strong>!<br>
+            <br>
+            O HTML está na ordem 1, 2, 3, 4, mas visualmente:<br>
+            🔹 Item 2 aparece primeiro (grid-column: 1)<br>
+            🔹 Item 1 aparece no meio (grid-column: 2)<br>
+            🔹 Item 3 na direita<br>
+            🔹 Item 4 ocupa toda a largura na parte inferior
+        </p>
+        <p>⚠️ <strong>Cuidado:</strong> Use com moderação para não prejudicar a acessibilidade!</p>
+    </div>
+    <div class="exemplo5">
+        <div class="item1">1<br>(meio)</div>
+        <div class="item2">2<br>(esquerda)</div>
+        <div class="item3">3<br>(direita)</div>
+        <div class="item4">4<br>(embaixo, span total)</div>
+    </div>
+
+    <div class="explicacao" style="margin-top: 30px;">
+        <h2>📝 Resumo Rápido</h2>
+        <p>
+            <code>grid-column: 1 / 3;</code> → Da linha 1 à 3 (ocupa 2 colunas)<br>
+            <code>grid-column: span 2;</code> → Ocupa 2 colunas (mais fácil)<br>
+            <code>grid-column: 1 / -1;</code> → Da primeira à última linha (largura total)<br>
+            <code>grid-row: 2 / 4;</code> → Da linha 2 à 4 (ocupa 2 linhas)<br>
+            <code>grid-row: span 2;</code> → Ocupa 2 linhas<br>
+            <br>
+            🔹 Use <strong>span</strong> sempre que possível - mais legível e flexível!
+        </p>
+    </div>
+</body>
+</html>

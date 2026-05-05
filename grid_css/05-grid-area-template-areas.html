@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid - grid-area e grid-template-areas</title>
+    <style>
+        /* ============================================
+           grid-area e grid-template-areas
+           ============================================ */
+
+        /*
+         * grid-template-areas é UMA DAS FUNCIONALIDADES MAIS PODEROSAS DO GRID!
+         * 
+         * Permite definir o layout usando "nomes" em formato visual,
+         * como se fosse um "mapa" do grid.
+         * 
+         * COMO FUNCIONA:
+         * 1. No container: grid-template-areas define um "mapa" com nomes
+         * 2. Nos itens: grid-area: "nome" associa o item à área do mapa
+         * 
+         * EXEMPLO:
+         * grid-template-areas:
+         *   "header  header  header"
+         *   "sidebar content content"
+         *   "footer  footer  footer";
+         * 
+         * Cada string = uma linha do grid
+         * Cada nome = uma célula
+         * Nomes iguais em células adjacentes formam UMA área
+         * "." = célula vazia
+         */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #e0e0e0;
+        }
+
+        h1 { color: #e94560; margin-bottom: 20px; }
+        h2 { color: #e94560; margin: 30px 0 15px; }
+
+        .explicacao {
+            background: #16213e;
+            padding: 15px;
+            border-left: 4px solid #e94560;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .explicacao code {
+            background: #0f3460;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #e94560;
+        }
+
+        .container {
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .container > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        /* ============ EXEMPLO 1: Layout básico com template-areas ============ */
+        .layout-site {
+            display: grid;
+            /*
+             * O MAPA DO LAYOUT:
+             * 
+             * "header header header"  → 1 linha com header ocupando 3 colunas
+             * "nav    main   aside"   → 2ª linha com nav, main e aside
+             * "footer footer footer"  → 3ª linha com footer ocupando 3 colunas
+             * 
+             * Regras:
+             * - Cada "palavra" é uma célula
+             * - Nomes IGUAIS em células adjacentes = UMA área
+             * - O formato deve ser retangular (não pode ser "L")
+             * - Use "." para células vazias
+             */
+            grid-template-areas:
+                "header header header"
+                "nav    main   aside"
+                "footer footer footer";
+            
+            grid-template-columns: 150px 1fr 200px;
+            grid-template-rows: 80px 1fr 60px;
+            gap: 10px;
+            background: #16213e;
+            padding: 20px;
+            min-height: 400px;
+        }
+
+        /* Associando cada item à sua área pelo nome */
+        .layout-site .header  { grid-area: header; background: #e94560; color: white; }
+        .layout-site .nav     { grid-area: nav; background: #533483; color: white; }
+        .layout-site .main    { grid-area: main; background: #0f3460; }
+        .layout-site .aside   { grid-area: aside; background: #533483; color: white; }
+        .layout-site .footer  { grid-area: footer; background: #e94560; color: white; }
+
+        /* ============ EXEMPLO 2: Layout com células vazias ============ */
+        .layout-vazio {
+            display: grid;
+            /*
+             * Usando "." para células vazias
+             * 
+             * "header header .     "
+             * "nav    main   aside"
+             * ".      footer footer"
+             * 
+             * O "." significa que a célula existe mas está VAZIA
+             * Útil para criar layouts assimétricos
+             */
+            grid-template-areas:
+                "header header ."
+                "nav    main   aside"
+                ".      footer footer";
+            
+            grid-template-columns: 150px 1fr 200px;
+            grid-template-rows: 80px 200px 60px;
+            gap: 10px;
+            background: #16213e;
+            padding: 20px;
+        }
+
+        .layout-vazio .header { grid-area: header; background: #e94560; color: white; }
+        .layout-vazio .nav    { grid-area: nav; background: #533483; color: white; }
+        .layout-vazio .main   { grid-area: main; background: #0f3460; }
+        .layout-vazio .aside  { grid-area: aside; background: #533483; color: white; }
+        .layout-vazio .footer { grid-area: footer; background: #e94560; color: white; }
+
+        /* ============ EXEMPLO 3: Layout responsivo ============ */
+        .layout-responsivo {
+            display: grid;
+            gap: 15px;
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .layout-responsivo > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .layout-responsivo .header { grid-area: header; background: #e94560; color: white; }
+        .layout-responsivo .nav    { grid-area: nav; background: #533483; color: white; }
+        .layout-responsivo .main   { grid-area: main; background: #0f3460; }
+        .layout-responsivo .aside  { grid-area: aside; background: #533483; color: white; }
+        .layout-responsivo .footer { grid-area: footer; background: #e94560; color: white; }
+
+        /* Layout para DESKTOP */
+        .layout-responsivo {
+            grid-template-areas:
+                "header header header header"
+                "nav    main   main   aside"
+                "footer footer footer footer";
+            grid-template-columns: 120px 1fr 1fr 200px;
+        }
+
+        /* Layout para TABLET */
+        @media (max-width: 900px) {
+            .layout-responsivo {
+                grid-template-areas:
+                    "header header"
+                    "nav    nav"
+                    "main   aside"
+                    "footer footer";
+                grid-template-columns: 1fr 200px;
+            }
+        }
+
+        /* Layout para CELULAR */
+        @media (max-width: 600px) {
+            .layout-responsivo {
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "aside"
+                    "footer";
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============ EXEMPLO 4: grid-area como shorthand ============ */
+        .layout-grid-area-shorthand {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 100px);
+            gap: 10px;
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .layout-grid-area-shorthand > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        /*
+         * grid-area TAMBÉM PODE SER USADO COMO SHORTHAND para:
+         * grid-row-start / grid-column-start / grid-row-end / grid-column-end
+         * 
+         * grid-area: row-start / col-start / row-end / col-end;
+         */
+        .layout-grid-area-shorthand .item1 {
+            background: #e94560;
+            color: white;
+            /* grid-area: row-start / col-start / row-end / col-end */
+            grid-area: 1 / 1 / 3 / 2;
+            /* Equivalente a: grid-row: 1 / 3; grid-column: 1 / 2; */
+        }
+
+        .layout-grid-area-shorthand .item5 {
+            background: #e94560;
+            color: white;
+            grid-area: 1 / 3 / 2 / 4;
+        }
+    </style>
+</head>
+<body>
+    <h1>📐 grid-area e grid-template-areas</h1>
+
+    <div class="explicacao">
+        <p>
+            <strong>grid-template-areas</strong> permite criar layouts usando 
+            <strong>nomes visuais</strong> em formato de "mapa".<br>
+            É a forma MAIS INTUITIVA de criar layouts com Grid!
+        </p>
+        <br>
+        <p>
+            ⚡ <code>grid-template-areas</code> → Define o mapa no CONTAINER<br>
+            ⚡ <code>grid-area</code> → Associa o item à área no ITEM FILHO
+        </p>
+    </div>
+
+    <!-- EXEMPLO 1 -->
+    <h2>1️⃣ Layout clássico com grid-template-areas</h2>
+    <div class="explicacao">
+        <p>
+            <strong>Mapa do layout:</strong><br>
+            <code>
+                "header header header"<br>
+                "nav    main   aside"<br>
+                "footer footer footer"
+            </code>
+        </p>
+        <p>
+            🔹 Cada <strong>string</strong> = uma linha do grid<br>
+            🔹 Cada <strong>nome</strong> dentro da string = uma coluna<br>
+            🔹 Nomes <strong>iguais</strong> em células adjacentes = uma área só<br>
+            🔹 O formato da área deve ser <strong>retangular</strong>
+        </p>
+    </div>
+    <div class="container layout-site">
+        <div class="header">HEADER</div>
+        <div class="nav">NAV</div>
+        <div class="main">MAIN (conteúdo principal)</div>
+        <div class="aside">ASIDE</div>
+        <div class="footer">FOOTER</div>
+    </div>
+
+    <!-- EXEMPLO 2 -->
+    <h2>2️⃣ Células vazias com "."</h2>
+    <div class="explicacao">
+        <p>
+            <strong>Mapa do layout com células vazias:</strong><br>
+            <code>
+                "header header ."<br>
+                "nav    main   aside"<br>
+                ".      footer footer"
+            </code>
+        </p>
+        <p>
+            O <strong>ponto (.)</strong> representa uma célula que existe mas está VAZIA.<br>
+            Útil para criar layouts assimétricos ou pular posições.
+        </p>
+    </div>
+    <div class="container layout-vazio">
+        <div class="header">HEADER</div>
+        <div class="nav">NAV</div>
+        <div class="main">MAIN</div>
+        <div class="aside">ASIDE</div>
+        <div class="footer">FOOTER</div>
+    </div>
+
+    <!-- EXEMPLO 3 -->
+    <h2>3️⃣ Layout RESPONSIVO com grid-template-areas</h2>
+    <div class="explicacao">
+        <p>
+            <strong>O grande poder do grid-template-areas:</strong> Mudar o layout 
+            completamente em diferentes tamanhos de tela, apenas alterando o mapa!<br>
+            <br>
+            Redimensione a tela para ver o layout mudar:
+        </p>
+        <p>
+            🖥️ <strong>Desktop:</strong> 4 colunas (nav | main | main | aside)<br>
+            📱 <strong>Tablet:</strong> 2 colunas (main + aside)<br>
+            📱 <strong>Celular:</strong> 1 coluna (tudo empilhado)
+        </p>
+        <p>✨ <strong>SEM PRECISAR ALTERAR O HTML!</strong></p>
+    </div>
+    <div class="layout-responsivo">
+        <div class="header">HEADER</div>
+        <div class="nav">NAV</div>
+        <div class="main">MAIN - Conteúdo Principal</div>
+        <div class="aside">ASIDE - Sidebar</div>
+        <div class="footer">FOOTER</div>
+    </div>
+
+    <!-- EXEMPLO 4 -->
+    <h2>4️⃣ grid-area como shorthand</h2>
+    <div class="explicacao">
+        <p>
+            <code>grid-area</code> também pode ser usado como shorthand para:<br>
+            <code>grid-row-start / grid-column-start / grid-row-end / grid-column-end</code>
+        </p>
+        <p>
+            📌 <code>grid-area: 1 / 1 / 3 / 2;</code><br>
+            🔹 <strong>row-start:</strong> 1<br>
+            🔹 <strong>col-start:</strong> 1<br>
+            🔹 <strong>row-end:</strong> 3<br>
+            🔹 <strong>col-end:</strong> 2
+        </p>
+        <p>
+            ⚠️ <strong>Memorize:</strong> A ordem é <strong>ROW</strong> depois COLUMN!<br>
+            (linha/coluna/linha/coluna) - difícil mas útil!
+        </p>
+    </div>
+    <div class="layout-grid-area-shorthand">
+        <div class="item1">grid-area:<br>1 / 1 / 3 / 2</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">grid-area:<br>1 / 3 / 2 / 4</div>
+        <div class="item6">6</div>
+    </div>
+
+    <div class="explicacao" style="margin-top: 30px;">
+        <h2>📝 Regras do grid-template-areas</h2>
+        <p>
+            ✅ <strong>Nomes iguais</strong> em células adjacentes = formam UMA área<br>
+            ✅ Células vazias usam <code>.</code> (ponto)<br>
+            ✅ A área deve ser <strong>retangular</strong> (não pode ser "L" ou "T")<br>
+            ✅ Todas as linhas devem ter o <strong>mesmo número de colunas</strong><br>
+            ✅ Use <strong>media queries</strong> para redefinir o layout em diferentes telas<br>
+            <br>
+            🔥 <strong>Dica de ouro:</strong> grid-template-areas + media queries = 
+            layout responsivo sem tocar no HTML!
+        </p>
+    </div>
+</body>
+</html>
